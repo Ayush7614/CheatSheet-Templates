@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    font-family: 'Righteous', cursive;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #272822;
+    color: white;
+    height: 72px;
+}
+
+.container{
+    font-family: 'Roboto', sans-serif;
+    width: 50vw;
+    padding: 32px 0;
+    margin: auto;
+}
+
+
+
+.toolbar-item button{
+    cursor: pointer !important;
+    color: white !important;
+    border: 1px solid white !important;
+    border-radius: 15px !important;
+    padding: 5px 14px !important;
+}
+
