@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://websitesetup.org/javascript-cheat-sheet/">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css">
+    <title>JavaScript Cheatsheet by Yurisha</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            Here is the JavaScript Cheatsheet!
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li><h2>Including JavaScript in an HTML Page:</h2><br>This is to include JavaScript inside a page.
+                <pre class="language-html"><code>
+                    &lt;script type="text/javascript"&gt;
+                    //JS code goes here
+                    &lt;/script&gt;
+                    </code></pre>
+            </li> 
+            <li><h2>Call an External JavaScript File: </h2> <br>It helps in the reusability of code in more than one HTML file.
+                <pre class="language-js"><code>&lt;script src="myscript.js"&gt; &lt;/script&gt;</code></pre>
+            </li> <br>
+            <li><h2>JavaScript Syntax:</h2><br>
+                <pre class="language-js"><code>// How to create variables:
+                    var x;
+                    let y;
+                    
+                    // How to use variables:
+                    x = 5;
+                    y = 6;
+                    let z = x + y;</code></pre>
+            </li> 
+            <li>
+                <h2>Including Comments</h2>
+                <br>
+            Comments are important because they help other people understand what is going on in your code or remind you if you forgot something yourself. Keep in mind that they have to be marked properly so the browser won’t try to execute them.<br>
+
+            In JavaScript you have two different options:<br><br>
+
+            <h3>Single-line comments</h3> — To include a comment that is limited to a single line, precede it with //<br><br>
+            <pre class="language-js"><code>// Change heading:
+                document.getElementById("myH").innerHTML = "My First Page";</code></pre>
+            <h3>Multi-line comments</h3> — In case you want to write longer comments between several lines, wrap it in /* and */ to avoid it from being executed<br>
+            <pre class="language-js"><code>
+/*
+The code below will change
+the heading with id = "myH"
+and the paragraph with id = "myP"
+in my web page:
+*/
+document.getElementById("myH").innerHTML = "My First Page";
+document.getElementById("myP").innerHTML = "My first paragraph.";
+            </code></pre>
+            <br>
+            </li>
+            <li>
+                <h2>Variables in JavaScript</h2><br>
+                You have three different possibilities for declaring a variable in JavaScript, each with their own specialties:
+<br><br>
+             <h3>var </h3>  The most common variable. It can be reassigned but only accessed within a function. Variables defined with var move to the top when the code is executed.<br>
+             <h3>const </h3>  Can not be reassigned and not accessible before they appear within the code.<br>
+             <h3>let</h3>  Similar to const, the let variable can be reassigned but not re-declared<br><br>
+            </li>
+            <li><h2>Objects:</h2>
+                    <pre class="language-js"><code>
+                    var person = {
+                    firstName:"John",
+                    lastName:"Doe",
+                    age:30,
+                    nationality:"American"
+                }; </code></pre>
+            </li> <br>
+            <li><h2>Arrays:</h2>
+                <pre class="language-js"><code>var fruit = ["Banana", "Apple", "Pear"];</code></pre>
+            </li> <br>
+            <li>
+               <h2>Operators</h2> </h2>
+            If you have variables, you can use them to perform different kinds of operations. To do so, you need operators.
+<br><br>
+           <h3>Basic Operators</h3><br>
+           + — Addition<br>
+           - — Subtraction<br>
+           * — Multiplication<br>
+           / — Division<br>
+           (...) — Grouping operator, operations within brackets are executed earlier than those outside<br>
+           % — Modulus (remainder )<br>
+           ++ — Increment numbers<br>
+           -- — Decrement numbers<br><br>
+           <h3>Comparison Operators</h3><br>
+           == — Equal to<br>
+           === — Equal value and equal type<br>
+           != — Not equal<br>
+           !== — Not equal value or not equal type<br>
+           > — Greater than<br>
+           < — Less than<br>
+           >= — Greater than or equal to<br>
+           <= — Less than or equal to<br>
+           ? — Ternary operator<br><br>
+           <h3>Logical Operators</h3>
+           && — Logical and<br>
+           || — Logical or<br>
+           ! — Logical not<br>
+            </li><br>
+           <h3>Bitwise Operators</h3> 
+& — AND statement<br>
+| — OR statement<br>
+~ — NOT<br>
+^ — XOR<br>
+<< — Left shift<br>
+>> — Right shift<br>
+>>> — Zero fill right shift<br><br>
+            <li><h2>Functions:</h2>
+                <pre class="language-js"><code>function name(parameter1, parameter2, parameter3) {
+                    // what the function does
+                } </code></pre>
+            </li> <br>
+            <li><h2>JavaScript Loops:</h2>
+                <pre class="language-js"><code>for (before loop; condition for loop; execute after loop) {
+                    // what to do during the loop
+                } </code></pre>
+            </li> <br>
+            <li><h2>If – Else Statements:</h2>
+                <pre class="language-js"><code>if (condition) {
+                    // what to do if condition is met
+                } else {
+                    // what to do if condition is not met
+                } </code></pre>
+            </li> <br>
+            <li><h2>Strings:</h2>
+                <pre class="language-js"><code>var person = "John Doe";</code></pre>
+            </li> <br>
+
+        </ol>
+    </div>
+</body>
+
+</html>
