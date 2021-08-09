@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Flask Cheatsheet</title>
+</head>
+<body>
+    <nav>
+        <div class="heading">Flask Cheatsheet</div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li><b>Importing Flask</b></li>
+                <pre class="language-python"><code>from flask import Flask</code></pre>
+            </li> 
+            <li><b> Most used import functions: </b>These are some of the most used import functions.
+                <pre class="language-python"><code>from flask import Flask, render_template, redirect, url_for, request</code></pre>
+            </li>
+            <li><b>Boilerplate: </b>This is the basic template or barebone structure of Flask.
+                <pre class="language-python"><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+return "<p>Hello, World!</p>"
+
+app.run()               
+                </code></pre>
+            </li> 
+            <li><b>route(endpoint):</b> This is to make different endpoints in our flask app.
+                <pre class="language-python"><code>@app.route("/")</code></pre>
+            </li>
+            <li><b>Route method:</b> Allowing get and post requests on an endpoint.
+                <pre class="language-python"><code>methods = ['GET', 'POST']</code></pre>
+            </li>
+            <li><b>Re-run while coding:</b> This is used to automatically return the program when the file is saved.
+                <pre class="language-python"><code>app.run(debug=True)</code></pre>
+            </li>
+            <li><b>Change host:</b> This is used to change the host.
+                <pre class="language-python"><code>app.run(host='0.0.0.0')</code></pre>
+            </li>
+            <li><b>Change port:</b> This is used to change the port.
+                <pre class="language-python"><code>app.run(port=80)</code></pre>
+            </li>
+            <li><b>SQLAlchemy</b>
+                <pre class="language-python"><code>from flask_sqlalchemy import SQLAlchemy</code></pre>
+            </li>
+            <li><b>Database URL:</b> This is the database's address.
+                <pre class="language-python"><code>app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db_name' 
+or 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'</code></pre>
+            </li>
+            <li><b>Initialization:</b> This is used to initialize SQLAlchemy.
+                <pre class="language-python"><code>db = SQLAlchemy(app)</code></pre>
+            </li>
+            <li><b>Creating Model:</b> Class to get data from database and to send data to the database.</li>
+                <pre class="language-python"><code>class TableName(db.Model): 
+column_1 = db.Column(db.Integer, primary_key=True) 
+column_2 = db.Column(db.String(80), nullable=False) 
+column_3 = db.Column(db.String(12), nullable=False)</code></pre>
+            <li><b>Get all data(.all()):</b>This is used to get all the data from the database.
+                <pre class="language-python"><code>data = ClassName.query.filter_by().all()</code></pre>
+            </li>
+            <li><b>Filtered data(.first()):</b> This is used to get the first dataset from the list returned by the filter_by function. You can get targetted data by this.
+                <pre class="language-python"><code>data = ClassName.query.filter_by().first()</code></pre>
+            </li>
+            <li><b>Send/add data to database:</b> This is used to send/add data to the database.
+                <pre class="language-python"><code>data_to_send = ClassName(column_1=dataset1, column_2=dataset2, column_3=dataset3) 
+db.session.add(data_to_send) 
+db.session.commit()</code></pre>
+            </li>
+            <li><b>Delete data from the database:</b> This is used to delete data from the database.
+                <pre class="language-python"><code>data_to_send = ClassName(column_1=dataset1, column_2=dataset2, column_3=dataset3)
+db.session.delete(data_to_send)
+db.session.commit(</code></pre>
+            </li> 
+            <li><b>Request method:</b> This is used to know what request is made(get/post).
+                <pre class="language-python"><code>request.method</code></pre>
+            </li>   
+            <li><b>Render Template:</b> This is used to pass whole html file directly.
+                <pre class="language-python"><code>render_template("file.html")</code></pre>
+            </li>
+            <li><b>FSADeprecationWarning</b>
+                <pre class="language-python"><code>app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True|False</code></pre> 
+            </li>    
+            <li><b>Creating Database file:</b> This is used to create a database file.
+                <pre class="language-python"><code>from yourapplicationname import db 
+db.create_all() 
+exit()</code></pre>
+            </li>
+            <li><b>Method to return database items:</b> This is used to return database items.
+                <pre class="language-python"><code>def __repr__(self) -> str: 
+return f"{self.item}"</code></pre>
+            </li>
+            <li><b>Printing returned content from the method:</b> This is used to print returned database items.
+                <pre class="language-python"><code>data = ClassNameWithMethod.query.all() 
+print(data)</code></pre>
+            </li>
+            <li><b>Flask Documentation</b>
+                <pre class="language-python"><code>https://flask.palletsprojects.com/en/latest/</code></pre>
+            </li>
+            <li><b>Flask SQLAlchemy Documentation</b></li>
+            <pre class="language-python"><code>https://flask-sqlalchemy.palletsprojects.com/en/2.x/</code></pre>
+        </ol>
+    </div>
+</body>
+</html>
