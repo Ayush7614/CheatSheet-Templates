@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css">
+    <title>GitHub Cheatsheet By Ushmita</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            This GitHub Cheatsheet is for you.!
+        </div>
+    </nav>
+    <div class="container">
+            <li><b>Configuring user information used across all local repositories:</b> set a name that is identifiable for credit when review version history
+                <pre class="language-js"><code>git config --global user.name “[firstname lastname]” </code></pre>
+            </li> 
+            <li><b>Configuring user information used across all local repositories:</b> set an email address that will be associated with each history marker
+                <pre class="language-js"><code>git config --global user.email “[valid-email]”</code></pre>
+            </li> 
+            <li><b>Configuring user information used across all local repositories:</b> set automatic command line coloring for Git for easy reviewing
+                <pre class="language-js"><code>git config --global color.ui auto</code></pre>
+            </li> 
+            <li><b>Configuring user information, initializing and cloning repositories:</b> initialize an existing directory as a Git repository
+                <pre class="language-js"><code>git init</code></pre>
+            </li> 
+            <li><b>Configuring user information, initializing and cloning repositories:</b> retrieve an entire repository from a hosted location via URL
+                <pre class="language-js"><code>git clone [url]</code></pre>
+            </li> 
+            <li><b>Working with snapshots and the Git staging area:</b> show modified files in working directory, staged for your next commit
+                <pre class="language-js"><code>git status</code></pre>
+            </li> 
+            <li><b>Working with snapshots and the Git staging area:</b> add a file as it looks now to your next commit (stage)
+                <pre class="language-js"><code>git add [file]</code></pre>
+            </li> 
+            <li><b>Working with snapshots and the Git staging area:</b> unstage a file while retaining the changes in working directory
+                <pre class="language-js"><code>git reset [file]</code></pre>
+            </li> 
+            <li><b>Working with snapshots and the Git staging area:</b> diff of what is changed but not staged
+                <pre class="language-js"><code>git diff</code></pre>
+            </li> 
+            <li><b>Working with snapshots and the Git staging area:</b> diff of what is staged but not yet committed
+                <pre class="language-js"><code>git diff --staged</code></pre>
+            </li> 
+            <li><b>Working with snapshots and the Git staging area:</b> commit your staged content as a new commit snapshot
+                <pre class="language-js"><code>git commit -m “[descriptive message]”</code></pre>
+            </li> 
+            <li><b>Isolating work in branches, changing context, and integrating changes:</b> list your branches. a * will appear next to the currently active branch
+                <pre class="language-js"><code>git branch</code></pre>
+            </li> 
+            <li><b>Isolating work in branches, changing context, and integrating changes:</b> create a new branch at the current commit
+                <pre class="language-js"><code>git branch [branch-name]</code></pre>
+            </li> 
+            <li><b>Isolating work in branches, changing context, and integrating changes:</b> switch to another branch and check it out into your working directory
+                <pre class="language-js"><code>git checkout</code></pre>
+            </li> 
+        </ol>
+    </div>
+</body>
+
+</html>
