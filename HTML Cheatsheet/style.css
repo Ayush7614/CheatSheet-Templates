@@ -4,12 +4,12 @@
 }
 
 nav{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #272822;
-    color: white;
+    color: lightyellow;
     height: 72px;
 }
 
