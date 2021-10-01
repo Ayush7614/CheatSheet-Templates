@@ -10,7 +10,7 @@ nav{
     justify-content: center;
     background-color: cornflowerblue;
     color: black;
-    height: 72px;
+    height: 70px;
 }
 
 .content{
@@ -26,7 +26,7 @@ nav{
 }
 
 .logo{
-    padding: 0 13px;
+    padding: 0 12px;
 }
 
 .logo img{
