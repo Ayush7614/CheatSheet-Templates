@@ -63,6 +63,78 @@
             <li><b>Isolating work in branches, changing context, and integrating changes:</b> switch to another branch and check it out into your working directory
                 <pre class="language-js"><code>git checkout</code></pre>
             </li> 
+            <li><b>Isolating work in branches, changing context, and integrating changes:</b> merge the specified branch's history into the current one
+                <pre class="language-js"><code>git merge [branch]</code></pre>
+            </li>
+            <li><b>Isolating work in branches, changing context, and integrating changes:</b> show all commits in the current branch's history
+                <pre class="language-js"><code>git log</code></pre>
+            </li>
+            <li><b>Examining logs,diffs and object information:</b> show the commit history for the currently active branch
+                <pre class="language-js"><code>git log</code></pre>
+            </li>
+            <li><b>Examining logs,diffs and object information:</b> show the commits on branchA that is not in branchB
+                <pre class="language-js"><code>git log branchB..branchA</code></pre>
+            </li>
+            <li><b>Examining logs,diffs and object information:</b> show the commits that changed file even across renames
+                <pre class="language-js"><code>git log --follow[file]</code></pre>
+            </li>
+            <li><b>Examining logs,diffs and object information:</b> show the diff of what is in branchA that is not in branchB
+                <pre class="language-js"><code>git diff branchB..branchA</code></pre>
+            </li>
+            <li><b>Examining logs,diffs and object information:</b> show any object in Git in human-readable format
+                <pre class="language-js"><code>git show [SHA]</code></pre>
+            </li>
+            <li><b>Versioning file removes and path changes:</b> delete the file from project and stage the removal for commit
+                <pre class="language-js"><code>git rm [file]</code></pre>
+            </li>
+            <li><b>Versioning file removes and path changes:</b> change an existing file path and stage the move
+                <pre class="language-js"><code>git mv [existing-path] [new-path]</code></pre>
+            </li>
+            <li><b>Versioning file removes and path changes:</b> show all commit logs with indication of any paths that moved
+                <pre class="language-js"><code>git log --stat -M</code></pre>
+            </li>
+            <li><b>Preventing unintentional staging or commiting of files:</b> Save a file with desired patterns as .gitignore with either direct string
+                matches or wildcard globs.
+                <pre class="language-js"><code>logs/
+                    *.notes
+                    pattern*/</code></pre>
+            </li>
+            <li><b>Preventing unintentional staging or commiting of files:</b> system wide ignore pattern for all local repositories
+                <pre class="language-js"><code>git config --global core.excludesfile [file]</code></pre>
+            </li>
+            <li><b>Retrieving updates from another repository and updating local repos:</b> add a git URL as an alias
+                <pre class="language-js"><code>git remote add [alias] [url]</code></pre>
+            </li>
+            <li><b>Retrieving updates from another repository and updating local repos:</b> fetch down all the branches from that Git remote
+                <pre class="language-js"><code>git fetch [alias]</code></pre>
+            </li>
+            <li><b>Retrieving updates from another repository and updating local repos:</b> merge a remote branch into your current branch to bring it up to date
+                <pre class="language-js"><code>git merge [alias]/[branch]</code></pre>
+            </li>
+            <li><b>Retrieving updates from another repository and updating local repos:</b> Transmit local branch commits to the remote repository branch
+                <pre class="language-js"><code>git merge [alias] [branch]</code></pre>
+            </li>
+            <li><b>Retrieving updates from another repository and updating local repos:</b> fetch and merge any commits from the tracking remote branch
+                <pre class="language-js"><code>git pull</code></pre>
+            </li>
+            <li><b>Rewriting branches, updating commits and clearing history:</b> apply any commits of current branch ahead of specified one
+                <pre class="language-js"><code>git rebase [branch]</code></pre>
+            </li>
+            <li><b>Rewriting branches, updating commits and clearing history:</b> clear staging area, rewrite working tree from specified commit
+                <pre class="language-js"><code>git reset --hard [commit]</code></pre>
+            </li>
+            <li><b>Temporarily store modified, tracked files in order to change branches:</b> Save modified and staged changes
+                <pre class="language-js"><code>git stash</code></pre>
+            </li>
+            <li><b>Temporarily store modified, tracked files in order to change branches:</b> list stack-order of stashed file changes
+                <pre class="language-js"><code>git stash list</code></pre>
+            </li>
+            <li><b>Temporarily store modified, tracked files in order to change branches:</b> write working from top of stash stack
+                <pre class="language-js"><code>git stash pop</code></pre>
+            </li>
+            <li><b>Temporarily store modified, tracked files in order to change branches:</b> discard the changes from top of stash stack
+                <pre class="language-js"><code>git stash drop</code></pre>
+            </li>
         </ol>
     </div>
 </body>
