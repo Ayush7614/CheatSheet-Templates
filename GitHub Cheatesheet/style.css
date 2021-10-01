@@ -10,7 +10,7 @@ nav{
     justify-content: center;
     background-color: #272822;
     color: white;
-    height: 72px;
+    height: 70px;
 }
 
 .content{
@@ -27,11 +27,11 @@ nav{
 }
 
 .logo{
-    padding: 0 13px;
+    padding: 0 12px;
 }
 
 .logo img{
-    width: 32px;
+    width: 31px;
 }
 
 .toolbar-item button{
