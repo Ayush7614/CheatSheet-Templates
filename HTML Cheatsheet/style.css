@@ -10,7 +10,7 @@ nav{
     justify-content: center;
     background-color: #272822;
     color: white;
-    height: 72px;
+    height: 74px;
 }
 
 .content{
@@ -23,7 +23,7 @@ nav{
     padding: 32px 0;
     margin: auto;
     font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+    font-weight: italic;
 }
 
 .logo{

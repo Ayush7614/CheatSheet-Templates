@@ -4,13 +4,13 @@
 }
 
 nav{
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #272822;
+    background-color: #272833;
     color: white;
-    height: 75px;
+    height: 78px;
 }
 
 .content{
@@ -20,20 +20,20 @@ nav{
 .container{
     /* background-color: red; */
     width: 90vw;
-    padding: 33px 0;
+    padding: 30px 0;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 strong{
-    font-size:21px;
+    font-size:25px;
 }
 .logo{
     padding: 0 13px;
 }
 
 .logo img{
-    width: 32px;
+    width: 38px;
 }
 
 .toolbar-item button{
