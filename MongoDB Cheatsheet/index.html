@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="prism.css" />
+    <script src="prism.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>MongoDB Cheatsheet by Asmit</title>
+  </head>
+
+  <body>
+    <nav>
+      <span class="logo"><img src="copy.png" alt="" /></span>
+      <div class="content center">This MongoDB Cheatsheet is For You!</div>
+    </nav>
+    <div class="container">
+      <ol>
+        <li>
+          <b>Show All Databases</b>
+          <pre class="language-js"><code>show dbs </code></pre>
+        </li>
+        <li>
+          <b>Show Current Database</b>
+          <pre class="language-js"><code>db </code></pre>
+        </li>
+        <li>
+          <b>Create Or Switch Database</b>
+          <pre class="language-js"><code>use acme </code></pre>
+        </li>
+        <li>
+          <b>Drop</b>
+          <pre class="language-js"><code>db.dropDatabase() </code></pre>
+        </li>
+        <li>
+          <b>Create Collection</b>
+          <pre
+            class="language-js"
+          ><code>db.createCollection('posts') </code></pre>
+        </li>
+        <li>
+          <b>Show Collections</b>
+          <pre class="language-js"><code>show collections </code></pre>
+        </li>
+        <li>
+          <b>Insert Row</b>
+          <pre class="language-js"><code>db.posts.insert({
+            title: 'Post One',
+            body: 'Body of post one',
+            category: 'News',
+            tags: ['news', 'events'],
+            user: {
+              name: 'John Doe',
+              status: 'author'
+            },
+            date: Date()
+          })</code></pre>
+        </li>
+        <li>
+          <b>Insert Multiple Rows</b>
+          <pre class="language-js"><code>db.posts.insertMany([
+            {
+              title: 'Post Two',
+              body: 'Body of post two',
+              category: 'Technology',
+              date: Date()
+            },
+            {
+              title: 'Post Three',
+              body: 'Body of post three',
+              category: 'News',
+              date: Date()
+            },
+            {
+              title: 'Post Four',
+              body: 'Body of post three',
+              category: 'Entertainment',
+              date: Date()
+            }
+          ]) </code></pre>
+        </li>
+        <li>
+          <b>Get All Rows</b>
+          <pre class="language-js"><code>db.posts.find() </code></pre>
+        </li>
+        <li>
+          <b>Get All Rows Formatted</b>
+          <pre class="language-js"><code>db.find().pretty() </code></pre>
+        </li>
+        <li>
+          <b>Find Rows</b>
+          <pre
+            class="language-js"
+          ><code>db.posts.find({ category: 'News' }) </code></pre>
+        </li>
+        <li>
+          <b>Sort Rows (Ascending Order)</b>
+          <pre
+            class="language-js"
+          ><code>db.posts.find().sort({ title: 1 }).pretty() </code></pre>
+        </li>
+        <li>
+          <b>Count Rows</b>
+          <pre class="language-js"><code>db.posts.find().count() </code></pre>
+        </li>
+        <li>
+          <b>Limit Rows</b>
+          <pre
+            class="language-js"
+          ><code>db.posts.find().limit(2).pretty() </code></pre>
+        </li>
+        <li>
+          <b>Chaining</b>
+          <pre
+            class="language-js"
+          ><code>db.posts.find().limit(2).sort({ title: 1 }).pretty() </code></pre>
+        </li>
+        <li>
+          <b>Foreach</b>
+          <pre class="language-js"><code>db.posts.find().forEach(function(doc) {
+            print("Blog Post: " + doc.title)
+          }) </code></pre>
+        </li>
+        <li>
+          <b>Find One Row</b>
+          <pre
+            class="language-js"
+          ><code>db.posts.findOne({ category: 'News' }) </code></pre>
+        </li>
+        <li>
+          <b>Find Specific Fields</b>
+          <pre class="language-js"><code>db.posts.find({ title: 'Post One' }, {
+            title: 1,
+            author: 1
+          }) </code></pre>
+        </li>
+        <li>
+          <b>Update Row</b>
+          <pre class="language-js"><code>db.posts.update({ title: 'Post Two' },
+            {
+              title: 'Post Two',
+              body: 'New body for post 2',
+              date: Date()
+            },
+            {
+              upsert: true
+            }) </code></pre>
+        </li>
+        <li>
+          <b>Update Specific Field</b>
+          <pre class="language-js"><code>db.posts.update({ title: 'Post Two' },
+            {
+              $set: {
+                body: 'Body for post 2',
+                category: 'Technology'
+              }
+            }) </code></pre>
+        </li>
+        <li>
+          <b>Increment Field (\$inc)</b>
+          <pre class="language-js"><code>db.posts.update({ title: 'Post Two' },
+            {
+              $inc: {
+                likes: 5
+              }
+            }) </code></pre>
+        </li>
+        <li>
+          <b> Rename Field</b>
+          <pre class="language-js"><code>db.posts.update({ title: 'Post Two' },
+            {
+              $rename: {
+                likes: 'views'
+              }
+            }) </code></pre>
+        </li>
+        <li>
+          <b>Delete Row</b>
+          <pre
+            class="language-js"
+          ><code>db.posts.remove({ title: 'Post Four' })</code></pre>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
