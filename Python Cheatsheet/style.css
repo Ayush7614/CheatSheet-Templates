@@ -4,13 +4,13 @@
 }
 
 nav{
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #272822;
     color: white;
-    height: 75px;
+    height: 78px;
 }
 
 .content{
