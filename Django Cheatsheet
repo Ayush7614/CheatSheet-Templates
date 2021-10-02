@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Cheatsheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        @media screen and (max-width:300px) {
+            .code-toolbar{
+                display:none;
+            }
+        }
+        *{
+    margin:0;
+    padding:0;
+  overflow-y:auto;
+  overflow-x: hidden;
+}
+body{
+     /* font-family: 'Ephesis', cursive; */
+     background-color: rgb(192, 238, 238);
+     background: url('https://cdn.pixabay.com/photo/2020/09/03/03/43/abstract-5540113_1280.png')no-repeat center center/cover;
+     
+     /* background: url('https://media.istockphoto.com/vectors/vintage-wallpaper-pattern-vector-id477381858?s=612x612')no-repeat center center/cover; */
+     /* center background: url('https://cdn.pixabay.com/photo/2017/02/16/19/47/bokeh-2072271_1280.jpg')no-repeat center/cover; */
+}
+.hulahu{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight:bolder;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    /* align-content: center; */
+    justify-content: center;
+}
+h1{
+    
+    margin:6px;
+    padding:6px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-family: 'Ephesis', cursive;
+    margin-left: 4%;;
+    /* text-decoration: underline; */
+    text-shadow: 120px 120px 120px rgb(17, 238, 153);
+}
+h2{
+    font-family: 'Ephesis', cursive;
+    margin-left:4.5%;
+    text-decoration:underline;
+}
+p{
+    margin-left:4.5%;
+    margin-top:0.4%;
+    font-size: 1.5rem;
+}
+.heading1{
+    
+
+    /* margin-left:4.1%; */
+    margin-top:0.4%;
+    font-family: 'Ephesis', cursive;
+} 
+p{
+
+ 
+    display:inline-block;
+    background-color: rgb(41, 3, 41);
+    color:rgb(243, 248, 241);
+    font-size:1.7rem;
+    width:90vw;
+    padding-left:15px;
+    border-radius: 24px;
+    /* font-family:cursive; */
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+}
+.code-toolbar{
+    margin-left:4.4%;
+    display:inline-block;
+    background-color: rgb(41, 3, 41);
+    color:white;
+    font-size:1.5rem;
+    width:90vw;
+    padding-left:15px;
+    border-radius: 24px;
+    font-family:cursive;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+}
+span1{
+  font-size: 1.2rem;
+  margin-left: 4.8%;
+  margin-top:10%;
+  margin-bottom: 2%;
+  font-family: 'Ephesis', cursive;
+  font-weight: 500;
+}
+footer{
+    background-color: rgb(12, 12, 11);
+    color:white;
+    height:8vh;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+
+    <h1 class="flex hulahu">Django Cheatsheet</h1>
+    <h1>What is Django?</h1>
+    <p>Python-based web framework used for rapid development.</p>
+    <h1 class="heading1">Installing Django + Setup</h1>
+    <p>pip install django</p><br><br>
+     <h2>Creating a project</h2>
+     <span1 >The below command creates a new project</span1>
+     <p>django-admin startproject projectName</p>
+     <h2>Starting a server</h2>
+     <span1>The below command starts the development server</span1>
+     <p>python manage.py runserver</p>
+     <h1 >Django MVT</h1>
+     <span1>Django follows MVT(Model, View, Template) architecture.</span1>
+     <h2>Sample Django Model</h2>
+     <span1>The model represents the schema of the database.</span1>
+     <p>from django.db import models<br><br>
+        class Product(models.Model): //Product is the name of our model 
+        product_id=models.AutoField</p>
+        <h2>Sample views.py</h2>
+        <span1>View decides what data gets delivered to the template.</span1>
+        <p>from django.http import HttpResponse<br><br>
+
+            def index(request):<br>
+            return HttpResponse(''Django <Prerna-Sharma></Prerna-Sharma> Cheatsheet'')</p>
+            <h1>Sample HTML Template</h1>
+            <span1>A sample .html file that contains HTML, CSS and Javascript.</span1>
+            <p>
+            <div class="code-toolbar"><pre class=" language-python"><class class=" language-python"><span class="token operator">&lt;</span>!DOCTYPE html<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">"X-UA-Compatible"</span> content<span class="token operator">=</span><span class="token string">"ie=edge"</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>Prerna-Sharma Cheatsheet<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>This <span class="token keyword">is</span> a sample template <span class="token builtin">file</span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+                </class>
+                </pre>
+                </div>
+            </p>
+            <h1>Views in Django</h1>
+            <h2>Sample Function-Based Views</h2>
+            <span1>A python function that takes a web request and returns a web response.</span1>
+            <p>from django.http import HttpResponse<br><br>
+
+                def index(request):<br>
+                return HttpResponse(''This is a function based view.')
+                </p>
+         <h2>Sample Class-Based Views</h2>
+         <span1>Django's class-based views provide an object-oriented (OO) way of organizing your view code.</span1>
+         <p>from django.views import View<br><br>
+
+            class SimpleClassBasedView(View):<br>
+            def get(self, request):<br>
+            ... # code to process a GET request</p>
+            <h1>URLs in Django</h1>
+            <span1>set of URL patterns to be matched against the requested URL.</span1>
+            <p>from django.contrib import admin<br>
+                from django.urls import path<br>
+                from . import views<br>
+                <br>
+                urlpatterns = [<br>
+                path('admin/', admin.site.urls),<br>
+                path('', views.index, name='index'),<br>
+                path('about/', views.about, name='about'),<br>
+                
+                ]</p>
+                <h1>Forms in Django</h1>
+                <span1>Similar to HTML forms but are created by Django using the form field.</span1>
+                <p>from django import forms<br>
+<br>
+                    # creating a form<br>
+                    class SampleForm(forms.Form):<br>
+                    Name = forms.CharField()<br>
+                    description = forms.CharField()<br>
+                    </p>
+            <h1>Apps in Django</h1>
+            <span1>Apps in Django are like independent modules for different functionalities.</span1>
+            <h2>Creating an app</h2>
+            <p>python manage.py startapp AppName</p>
+            <h2>Listing app in the settings.py</h2>
+            <span1>After creating an app, we need to list the app name in INSTALLED_APPS</span1>
+            <p>INSTALLED_APPS = [ <br>
+                'django.contrib.admin', <br>
+                'django.contrib.auth', <br>
+                'django.contrib.contenttypes', <br>
+                'django.contrib.sessions', <br>
+                'django.contrib.messages', <br>
+                'django.contrib.staticfiles', <br>
+                'AppName' 
+                ]</p>
+<h1>Templates in Django</h1>
+<span1>Used to handle dynamic HTML files separately.</span1>
+<h2>Configuring templates in settings.py</h2>
+<p>TEMPLATES = [<br>
+    {<br>
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',<br>
+    'DIRS': ["templates"],<br>
+    'APP_DIRS': True,<br>
+    'OPTIONS': {<br>
+    # ... some options here ...<br>
+    },<br>
+    },<br>
+    ]</p>
+    <h1>Changing the views.py file</h1>
+    <span1>A view is associated with every template file. This view is responsible for displaying the content from the template.</span1>
+    <p>def index(request):<br>
+        return render(request, 'index.html') ; #render is used to return the template</p>
+        <h2>Sample template file</h2>
+        <div class="code-toolbar"><pre class=" language-python"><code class=" language-python"><span class="token operator">&lt;</span>!DOCTYPE html<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>Template <span class="token keyword">is</span> working<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>This <span class="token keyword">is</span> a sample django template<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+        </div></div>
+        <h1>Migrations in Django</h1>
+        <span1>Migrations are Django's way of updating the database schema according to the changes that you make to your models.</span1>
+        <h2>Creating a migration</h2>
+        <span1>The below command is used to make migration but no changes are made to the actual database</span1>
+        <p>python manage.py makemigrations
+        </p>
+        <h2>Applying the migration</h2>
+        <span1>The below command is used to apply the changes to the actual database.</span1>
+        <p>python manage.py migrate</p>
+        <h1>Admin interface in Django</h1>
+        <span1>Django comes with a ready-to-use admin interface.</span1>
+        <h2>Creating the admin user</h2>
+        <p>python manage.py createsuperuser</p>
+        <h1>Page Redirection</h1>
+        <span1>Redirection is used to redirect the user to a specific page of the application on the occurrence of an event.</span1>
+        <h2>Redirect method</h2>
+        <p>from django.shortcuts import render, redirect<br>
+<br>
+            def redirecting(request):<br>
+            return redirect("https://#.com")<br>
+            </p>
+    <footer class="flex"> Copyright © 2020-2021|Prerna-Sharma</footer>    
+   
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
