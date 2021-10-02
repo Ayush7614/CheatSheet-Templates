@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(201, 190, 214);
+}
+h1{
+    font-family: Lobster;
+    text-align: center;
+    color:black;
+    font-size: 50px;
+ }
+ h2{
+    font-family: Lobster;
+    text-align: center;
+    color:rgb(24, 6, 41);
+    font-size: 35px;
+ }
+ .listing{
+     text-align:center;
+     font-size: 30px;
+ }
