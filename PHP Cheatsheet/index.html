@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="prism.css" />
+    <script src="prism.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>PHP Cheatsheet by Asmit</title>
+  </head>
+
+  <body>
+    <nav>
+      <span class="logo"><img src="copy.png" alt="" /></span>
+      <div class="content center">This PHP Cheatsheet is For You!</div>
+    </nav>
+    <div class="container">
+      <ol>
+        <li>
+          <b>Print output on screen</b>
+          <pre
+            class="language-php"
+          ><code>&lt;?php echo "Hello World!" ?&gt;</code></pre>
+        </li>
+        <li>
+          <b>Integer Variable</b>
+          <pre class="language-php"><code>&lt;?php $a = 3 ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>Float Variable</b>
+          <pre class="language-php"><code>&lt;?php $a = 4.6 ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>String Variable</b>
+          <pre
+            class="language-php"
+          ><code>&lt;?php $a = "Hello World"  ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>Array</b>
+          <pre
+            class="language-php"
+          ><code>&lt;?php $cars = array("BMW", "Jaguar", "Ferrai")  ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>Associative Array</b>
+          <pre class="language-php"><code>&lt;?php $person = array(
+              'name' => 'John',
+              'age' => 34
+            ) ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>Class</b>
+          <pre class="language-php"><code>&lt;?php  class Cars {
+            //code goes here...  
+          }  ?&gt;</code></pre>
+        </li>
+        <li>
+          <b>If statement</b>
+          <pre class="language-php"><code> &lt;?php if(condition) {
+            //code goes here...  
+          } ?&gt;</code></pre>
+        </li>
+        <li>
+          <b>If..Else</b>
+          <pre class="language-php"><code>&lt;?php if(condition) {
+            // if condition is met  
+          } else {
+            // if condition is not met
+          } ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>If..Elseif..Else</b>
+          <pre class="language-php"><code>if(condition) {
+              // if this condition is met
+            } else if(condition) {
+              //if this condition is met
+            } else {
+              // if none of the condition is met
+            } </code></pre>
+        </li>
+        <li>
+          <b>Switch Statement</b>
+          <pre class="language-php"><code>&lt;?php switch(num) {
+            case x:
+              // code goes here... 
+            break;
+            case y:
+              //code goes here...
+            break;
+            default:
+              code goes here...
+          } ?&gt;</code></pre>
+        </li>
+        <li>
+          <b>For Loop</b>
+          <pre
+            class="language-php"
+          ><code>&lt;?php for(initialization; condition; increment/decrement) {
+            //code goes here...   
+          } ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>While Loop</b>
+          <pre class="language-php"><code>&lt;?php while(condition) {
+            // code goes here...
+            increment/decrement  
+          } ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>Do-While</b>
+          <pre class="language-php"><code>&lt;?php do {
+            //code goes here...  
+          }while(condition); ?&gt;</code></pre>
+        </li>
+        <li>
+          <b>Foreach Loop</b>
+          <pre class="language-php"><code>&lt;?php foreach(arrayName: value) {
+            //code goes here...  
+          } ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>Filename of currently executing script.</b>
+          <pre
+            class="language-php"
+          ><code> &lt;?php $_SERVER['PHP_SELF'] ?&gt;</code></pre>
+        </li>
+        <li>
+          <b>IP Address of host server</b>
+          <pre
+            class="language-php"
+          ><code>&lt;?php $_SERVER['SERVER_ADDR'] ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>Name of the host server</b>
+          <pre
+            class="language-php"
+          ><code>&lt;?php $_SERVER['SERVER_NAME'] ?&gt;</code></pre>
+        </li>
+        <li>
+          <b>Request Method</b>
+          <pre
+            class="language-php"
+          ><code> $_SERVER['REQUEST_METHOD'] </code></pre>
+        </li>
+        <li>
+          <b>Get Method</b>
+          <pre
+            class="language-php"
+          ><code>&lt;?php $_GET['variable_name'] ?&gt; </code></pre>
+        </li>
+        <li>
+          <b>Post Method</b>
+          <pre
+            class="language-php"
+          ><code>&lt;?php $_POST['variable_name'] ?&gt; </code></pre>
+        </li>
+        <li>
+          <b> isset</b>
+          <pre
+            class="language-php"
+          ><code>&lt;?php if(isset($_POST['variable_name'])) {
+            //code goes here...   
+          } ?&gt; </code></pre>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
