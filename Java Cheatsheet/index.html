@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Pictures/Awesome Cheatsheets.png" type="image/x-icon">
+    <title>Java Cheatsheet By Ushmita</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            This Java Cheatsheet is for you.!
+        </div>
+    </nav>
+    <div class="container">
+            <li><b>Simple Hello World Program:</b> Boilerplate <code></code>
+                <pre class="language-js"><code>class HelloWorld{ 
+                    public static void main(String args[]){ 
+                    System.out.println("Hello World"); 
+                    } 
+                    } </code></pre>
+            </li> 
+            <li><b>Showing Output:</b> It will print something to the output console.
+                <pre class="language-js"><code>System.out.println([text])</code></pre>
+            </li> 
+            <li><b>Taking Input:</b> It will take string input from the user
+                <pre class="language-js"><code>import java.util.Scanner; //import scanner class
+
+                    // create an object of Scanner class
+                    Scanner input = new Scanner(System.in);
+                    
+                    // take input from the user
+                    String varName = input.nextLine();</code></pre>
+            </li>
+            <h2 style="color: red;">Primitive Type Variables:</h2>
+               <p> The eight primitives defined in Java are int, byte, short, long, float, double, boolean, and char those aren't considered objects and represent raw values.</p> 
+            <li><b>byte:</b> byte is a primitive data type it only takes up 8 bits of memory.
+                <pre class="language-js"><code>age = 18;</code></pre>
+            </li> 
+            <li><b>long:</b> long is another primitive data type related to integers. long takes up 64 bits of memory.
+                <pre class="language-js"><code>viewsCount = 3_123_456L;</code></pre>
+            </li> 
+            <li><b>float:</b> We represent basic fractional numbers in Java using the float type. This is a single-precision decimal number. Which means if we get past six decimal points, this number becomes less precise and more of an estimate.
+
+
+                <pre class="language-js"><code>price = 100INR;</code></pre>
+            </li> 
+            <li><b>char:</b> Char is a 16-bit integer representing a Unicode-encoded character.
+                <pre class="language-js"><code>letter = 'A';</code></pre>
+            </li> 
+            <li><b>boolean:</b> The simplest primitive data type is boolean. It can contain only two values: true or false. It stores its value in a single bit.
+                <pre class="language-js"><code>isEligible = true;</code></pre>
+            </li> 
+            <li><b>int:</b> int holds a wide range of non-fractional number values.
+                <pre class="language-js"><code>var1 = 256;</code></pre>
+            </li> 
+            <li><b>short:</b> If we want to save memory and byte is too small, we can use short.
+                <pre class="language-js"><code></code>short var2 = 786;</pre>
+            </li> 
+            <h2 style="color: red;">Comments</h2>
+            <p>A comment is the code that is not executed by the compiler, and the programmer uses it to keep track of the code.</p>
+            <li><b>Single line comment:</b>
+                <pre class="language-js"><code>// It's a single line comment</code></pre>
+            </li> 
+            <li><b>Multi-line comment:</b>
+                <pre class="language-js"><code>/* It's a 
+                    multi-line
+                    comment
+                    */</code></pre>
+            </li>
+            <h2 style="color: red;">Constants</h2> 
+            <p>Constants are like a variable, except that their value never changes during program execution.</p>
+            <li><b></b>
+                <pre class="language-js"><code>final float INTEREST_RATE = 0.04;</code></pre>
+            </li> 
+            <h2 style="color: red;">Arithmetic Operations</h2>
+            <li><b>Addition:</b> It can be used to add two numbers
+                <pre class="language-js"><code>int x = 10 + 3;</code></pre>
+            </li> 
+            <li><b>Subtraction:</b> It can be used to subtract two numbers
+                <pre class="language-js"><code>int x = 10 - 3;</code></pre>
+            </li>
+            <li><b>Multiplication:</b> It can be used to multiply two numbers
+                <pre class="language-js"><code>int x = 10 * 3;</code></pre>
+            </li>
+            <li><b>Division:</b> It can be used to divide two numbers
+                <pre class="language-js"><code>int x = 10 / 3;
+                    float x = (float)10 / (float)3;</code></pre>
+            </li>
+            <li><b>Modulo Remainder:</b>It returns the remainder of the two numbers after division
+                <pre class="language-js"><code>int x = 10 % 3;</code></pre>
+            </li>
+            <h2 style="color: red;">Augmented Operators</h2>
+            <li><b>Addition assignment:</b> 
+                <pre class="language-js"><code>var += 10 // var = var + 10</code></pre>
+            </li>
+            <li><b>Subtraction assignment:</b> 
+                <pre class="language-js"><code>var -= 10 // var = var - 10</code></pre>
+            </li>
+            <li><b>Multiplication assignment:</b> 
+                <pre class="language-js"><code>var *= 10 // var = var * 10</code></pre>
+            </li>
+            <li><b>Division assignment:</b>
+                <pre class="language-js"><code>var /= 10 // var = var / 10</code></pre>
+            </li>
+            <li><b>Modulus assignment:</b> 
+                <pre class="language-js"><code>var %= 10 // var = var % 10</code></pre>
+            </li>
+        </ol>
+    </div>
+</body>
+
+</html>
