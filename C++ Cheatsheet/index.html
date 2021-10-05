@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="prism.css" />
+    <script src="prism.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>C++ Cheatsheet by Akansh</title>
+  </head>
+
+  <body>
+    <nav>
+      <span class="logo"><img src="copy.png" alt="" /></span>
+      <div class="content center">This C++ Cheatsheet For You!</div>
+    </nav>
+    <div class="container">
+      <ol>
+        <li>
+          <b>Boilerplate Code</b>
+          <pre class="language-cpp"><code>
+            #include&lt;iostream&gt; 
+            using namespace std; 
+            int main() { 
+              cout <<"Hello World!";
+              return 0; 
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>Print output to screen</b>
+          <pre class="language-cpp"><code>cout << "Hello World!";</code></pre>
+        </li>
+        <li>
+          <b>User input</b>
+          <pre class="language-cpp"><code>cin >> varName</code></pre>
+        </li>
+        <li>
+          <b>Data types</b>
+          <pre class="language-cpp"><code>
+            int varName    // integer data type for non decimal numbers
+            float varName  // floating point data type for decimal numbers (single-precision)
+            double varName // double precision data type for decimal numbers (double-precision)
+            char varName   // character data type for single characters
+            bool varName   // boolean data type for true or false
+            void varName   // void data type for functions that do not return a value (absence of type)
+          </code></pre>
+        </li>
+        <li>
+          <b>Declarations</b>
+          <pre class="language-cpp"><code>
+            int x;                      // Declare x to be an integer (value undefined)
+            int x=255;                  // Declare and initialize x to 255
+            int a[10];                  // Array of 10 ints (a[0] through a[9])
+            int a[]={0,1,2};            // Initialized array (or a[3]={0,1,2}; )
+            int a[2][2]={{1,2},{4,5}};  // Array of array of ints (2d array)
+            char s[]="hello";           // String (6 elements including '\0')
+            int* p;                     // p is a pointer to (address of) int
+            char* s="hello";            // s points to unnamed array containing "hello"
+            int& r=x;                   // r is a reference to (alias of) int x
+          </code></pre>
+        </li>
+        <li>
+          <b>Arithmetic operators</b>
+          <pre class="language-cpp"><code>
+            +  // addition
+            -  // subtraction
+            *  // multiplication
+            /  // division
+            %  // modulus
+            ++ // increment by 1
+            -- // decrement by 1
+          </code></pre>
+        </li>
+        <li>
+          <b>Relational operators</b>
+          <pre class="language-cpp"><code>
+            ==  // equal to
+            !=  // not equal to
+            >   // greater than
+            <   // less than
+            >=  // greater than or equal to
+            <=  // less than or equal to
+          </code></pre>
+        </li>
+        <li>
+          <b>Logical operators</b>
+          <pre class="language-cpp"><code>
+            &&  // and
+            ||  // or
+            !   // not
+          </code></pre>
+        </li>
+        <li>
+          <b>Bitwise operators</b>
+          <pre class="language-cpp"><code>
+            &  // bitwise AND
+            |  // bitwise OR
+            ^  // bitwise XOR
+            ~  // bitwise NOT
+            << // bitwise left shift
+            >> // bitwise right shift
+          </code></pre>
+        </li>
+        <li>
+          <b>Assignment operators</b>
+          <pre class="language-cpp"><code>
+            =  // assignment
+            += // addition assignment
+            -= // subtraction assignment
+            *= // multiplication assignment
+            /= // division assignment
+            %= // modulus assignment
+          </code></pre>
+        </li>
+        <li>
+          <b>Escape Sequences</b>
+          <pre class="language-cpp"><code>
+            \a   // produce beep sound output
+            \b   // backspace
+            \f   // form feed
+            \n   // newline
+            \r   // carriage return
+            \t   // tab
+            \v   // vertical tab
+            \'   // single quote
+            \"   // double quote
+            \\   // backslash
+            \nnn // octal number
+            \xnn // hexadecimal number
+            \0   // null
+          </code></pre>
+        </li>
+        <li>
+          <b>Single line comment</b>
+          <pre
+            class="language-cpp"
+          ><code>// This is a single line comment</code></pre>
+        </li>
+        <li>
+          <b>Multi-line comment</b>
+          <pre class="language-cpp"><code>
+            /* 
+              This is a 
+              multi line 
+              comment
+            */
+          </code></pre>
+        </li>
+        <li>
+          <b>Maximum among two numbers</b>
+          <pre
+            class="language-cpp"
+          ><code>cout << max(56, 390); // 390</code></pre>
+        </li>
+        <li>
+          <b>Minimum among two numbers</b>
+          <pre
+            class="language-cpp"
+          ><code>cout << min(56, 390); // 56</code></pre>
+        </li>
+        <li>
+          <b>Square root of a number</b>
+          <pre class="language-cpp"><code>cout << sqrt(16); // 4</code></pre>
+        </li>
+        <li>
+          <b>Rounded up integer value</b>
+          <pre class="language-cpp"><code>cout << ceil(15.4); // 16</code></pre>
+        </li>
+        <li>
+          <b>Rounded down integer value</b>
+          <pre
+            class="language-cpp"
+          ><code>cout << floor(15.4); // 15</code></pre>
+        </li>
+        <li>
+          <b>Power of a number</b>
+          <pre class="language-cpp"><code>count << pow(5,3); // 125</code></pre>
+        </li>
+        <li>
+          <b>Decision Making Statements</b>
+          <pre class="language-cpp"><code>
+            // if statement
+            if(condition) {
+              // This block of code will get executed if the condition is True
+            }
+
+            // if-else statement
+            if(condition) {
+              // This block of code will get executed if the condition is True
+            }else{
+              // This block of code will get executed if the condition is False
+            }
+
+            // if else-if statement
+            if (condition_1) {
+              // This block of code will get executed if the condition_1 is True
+            }else if (condition_2){
+              // This block of code will get executed if the condition_1 is False but condition_2 is True
+            }else{
+              // This block of code will get executed if all conditions are False
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>Ternary Operator</b>
+          <pre
+            class="language-cpp"
+          ><code>variable = (condition) ? expressionTrue : expressionFalse;</code></pre>
+        </li>
+        <li>
+          <b>Switch Case Statements</b>
+          <pre class="language-cpp"><code>
+            switch (expression) {
+              case constant-expression: 
+                statement1;
+                statement2;
+                statement3;
+                break;
+              case constant-expression: 
+                statement;
+                break;
+                ...
+              default: 
+              statement;
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>Loops</b>
+          <pre class="language-cpp"><code>
+            // while loop
+            while(condition) {
+              // This block of code will get executed while the condition is True
+            }
+
+            // do-while loop
+            do {
+              // This block of code will get executed at least once
+            }while(condition);
+
+            // for loop
+            for(int i = 0; i < n; i++) {
+              // This block of code will get executed n times
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>Break statement</b>
+          <pre
+            class="language-cpp"
+          ><code>break; // break keyword inside the loop is used to terminate the loop</code></pre>
+        </li>
+        <li>
+          <b>Continue statement</b>
+          <pre
+            class="language-cpp"
+          ><code>continue; // continue keyword skips the rest of the current iteration of the loop and returns to the starting point of the loop</code></pre>
+        </li>
+        <li>
+          <b>Functions</b>
+          <pre class="language-cpp"><code>
+            // Function declaration
+            int functionName(int arg1, int arg2);
+
+            // Function definition
+            int functionName(int arg1, int arg2) {
+              // Function body
+              return 0;
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>Function Overloading</b>
+          <pre class="language-cpp"><code>
+            // Function declaration
+            int functionName(int arg1, int arg2);
+            int functionName(int arg1, int arg2, int arg3);
+
+            // Function definition
+            int functionName(int arg1, int arg2) {
+              // Function body
+              return 0;
+            }
+            int functionName(int arg1, int arg2, int arg3) {
+              // Function body
+              return 0;
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>Function Overriding</b>
+          <pre class="language-cpp"><code>
+            // Function declaration
+            int functionName(int arg1, int arg2);
+            int functionName(int arg1, int arg2, int arg3);
+
+            // Function definition
+            int functionName(int arg1, int arg2) {
+              // Function body
+              return 0;
+            }
+            int functionName(int arg1, int arg2, int arg3) {
+              // Function body
+              return 0;
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>Exception Handling</b>
+          <pre class="language-cpp"><code>
+            try {
+              // try block
+              // Code that might throw an exception
+            }catch(exceptionName exceptionVariable) {
+              // Code that handles the exception
+            }finally {
+              // finally block
+              // Code that will always get executed
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>Classes</b>
+          <pre class="language-cpp"><code>
+            // Class declaration
+            class ClassName {
+              public: // Access specifier
+              // fields
+              // functions
+              // blocks
+            };
+
+            // Object of class
+            ClassName objectName;
+          </code></pre>
+        </li>
+        <li>
+          <b>Constructors</b>
+          <pre class="language-cpp"><code>
+            class ClassName {
+              public:
+                className() { // Constructor
+                  cout << "Class Initialized!";
+                }
+            };
+              
+            int main() {
+              ClassName objName; 
+              return 0;
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>File Writing</b>
+          <pre class="language-cpp"><code>
+            #include &lt;iostream&gt;
+            #include &lt;fstream&gt;
+            using namespace std; 
+            int main() {
+              ofstream file;
+              file.open("fileName.txt"); // Create or open a text file
+              file << "Hello World!"; // Write to the file
+              file.close(); // Close the file
+              return 0;
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>File Reading</b>
+          <pre class="language-cpp"><code>
+            #include &lt;iostream&gt;
+            #include &lt;fstream&gt;
+            using namespace std; 
+            int main() {
+              ifstream file;
+              file.open("fileName.txt"); // Open text file
+              string line;
+              while(getline(file, line)) {
+                cout << line << endl;
+              }
+              file.close(); // Close the file
+            }
+          </code></pre>
+        </li>
+        <li>
+          <b>File Open Modes</b>
+          <pre class="language-cpp"><code>
+            fs.open("test.txt", std::fstream::in)     // Open file for reading
+
+            fs.open("test.txt", std::fstream::out)    // Open file for writing
+
+            fs.open("test.txt", std::fstream::binary) // Open file in binary mode
+
+            fs.open("test.txt", std::fstream::app)    // Opens the file and appends all the outputs at the end
+
+            fs.open("test.txt", std::fstream::ate)    // Opens the file and sets the cursor to the end of the file 
+
+            fs.open("test.txt", std::fstream::trunc)  // Removes the data in the existing file
+
+            fs.open("test.txt", std::fstream::nocreate) // Opens the file only if it already exists
+
+            fs.open("test.txt", std::fstream::noreplace) // Opens the file only if it does not exist
+          </code></pre>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
