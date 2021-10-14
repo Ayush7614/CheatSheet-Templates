@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="prism.css" />
+    <script src="prism.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Linux Cheatsheet by Akansh</title>
+  </head>
+
+  <body>
+    <nav>
+      <span class="logo"><img src="copy.png" alt="" /></span>
+      <div class="content center">This Linux Cheatsheet For You!</div>
+    </nav>
+    <div class="container">
+      <ol>
+        <li>
+          <b
+            >To go up one level of the directory tree. (Change into the parent
+            directory.)</b
+          >
+          <pre class="language-shell"><code>cd ..</code></pre>
+        </li>
+
+        <li>
+          <b>Go to the $HOME directory</b>
+          <pre class="language-shell"><code>cd</code></pre>
+        </li>
+
+        <li>
+          <b>Change to the /etc directory</b>
+          <pre class="language-shell"><code>cd /etc</code></pre>
+        </li>
+
+        <li>
+          <b>Display Linux system information</b>
+          <pre class="language-shell"><code>uname -a</code></pre>
+        </li>
+        <li>
+          <b>Display kernel release information</b>
+          <pre class="language-shell"><code>uname -r</code></pre>
+        </li>
+        <li>
+          <b>Show how long the system has been running + load</b>
+          <pre class="language-shell"><code>uptime</code></pre>
+        </li>
+        <li>
+          <b>Show system host name</b>
+          <pre class="language-shell"><code>hostname</code></pre>
+        </li>
+        <li>
+          <b>Display all local IP addresses of the host.</b>
+          <pre class="language-shell"><code>hostname -I</code></pre>
+        </li>
+        <li>
+          <b>Show system reboot history</b>
+          <pre class="language-shell"><code>last reboot</code></pre>
+        </li>
+        <li>
+          <b>Show the current date and time</b>
+          <pre class="language-shell"><code>date</code></pre>
+        </li>
+        <li>
+          <b>Show this month's calendar</b>
+          <pre class="language-shell"><code>cal</code></pre>
+        </li>
+        <li>
+          <b>Who you are logged in as</b>
+          <pre class="language-shell"><code>whoami</code></pre>
+        </li>
+        <li>
+          <b>Display messages in kernel ring buffer</b>
+          <pre class="language-shell"><code>dmesg</code></pre>
+        </li>
+        <li>
+          <b>Display CPU information</b>
+          <pre class="language-shell"><code>cat /proc/cpuinfo</code></pre>
+        </li>
+        <li>
+          <b>Display memory information</b>
+          <pre class="language-shell"><code>cat /proc/meminfo</code></pre>
+        </li>
+        <li>
+          <b
+            >Display free and used memory ( -h for human readable, -m for MB, -g
+            for GB.)</b
+          >
+          <pre class="language-shell"><code>free -h</code></pre>
+        </li>
+
+        <li>
+          <b>List all files in a long listing (detailed) format</b>
+          <pre class="language-shell"><code>ls -al</code></pre>
+        </li>
+
+        <li>
+          <b>Create a directory</b>
+          <pre class="language-shell"><code>mkdir directory</code></pre>
+        </li>
+
+        <li>
+          <b>Display the present working directory</b>
+          <pre class="language-shell"><code>pwd</code></pre>
+        </li>
+
+        <li>
+          <b>Remove (delete) file</b>
+          <pre class="language-shell"><code>rm file</code></pre>
+        </li>
+
+        <li>
+          <b>Remove the directory and its contents recursively</b>
+          <pre class="language-shell"><code>rm -r directory</code></pre>
+        </li>
+
+        <li>
+          <b>Force removal of file without prompting for confirmation</b>
+          <pre class="language-shell"><code>rm -f file</code></pre>
+        </li>
+
+        <li>
+          <b>Forcefully remove directory recursively</b>
+          <pre class="language-shell"><code>rm -rf directory</code></pre>
+        </li>
+
+        <li>
+          <b>Copy file1 to file2</b>
+          <pre class="language-shell"><code>cp file1 file2</code></pre>
+        </li>
+
+        <li>
+          <b
+            >Copy source_directory recursively to destination. If destination
+            exists, copy source_directory into destination, otherwise create
+            destination with the contents of source_directory.</b
+          >
+          <pre
+            class="language-shell"
+          ><code>cp -r source_directory destination</code></pre>
+        </li>
+
+        <li>
+          <b
+            >Rename or move file1 to file2. If file2 is an existing directory,
+            move file1 into directory file2</b
+          >
+          <pre class="language-shell"><code>mv file1 file2</code></pre>
+        </li>
+
+        <li>
+          <b>Create symbolic link to linkname</b>
+          <pre
+            class="language-shell"
+          ><code>ln -s /path/to/file linkname</code></pre>
+        </li>
+
+        <li>
+          <b
+            >Create an empty file or update the access and modification times of
+            file.</b
+          >
+          <pre class="language-shell"><code>touch file</code></pre>
+        </li>
+
+        <li>
+          <b>View the contents of file</b>
+          <pre class="language-shell"><code>cat file</code></pre>
+        </li>
+
+        <li>
+          <b>Browse through a text file</b>
+          <pre class="language-shell"><code>less file</code></pre>
+        </li>
+
+        <li>
+          <b>Display the first 10 lines of file</b>
+          <pre class="language-shell"><code>head file</code></pre>
+        </li>
+
+        <li>
+          <b>Display the last 10 lines of file</b>
+          <pre class="language-shell"><code>tail file</code></pre>
+        </li>
+
+        <li>
+          <b
+            >Display the last 10 lines of file and "follow" the file as it
+            grows.</b
+          >
+          <pre class="language-shell"><code>tail -f file</code></pre>
+        </li>
+
+        <li>
+          <b>Display PCI devices</b>
+          <pre class="language-shell"><code>lspci -tv</code></pre>
+        </li>
+        <li>
+          <b>Display USB devices</b>
+          <pre class="language-shell"><code>lsusb -tv</code></pre>
+        </li>
+        <li>
+          <b>Display DMI/SMBIOS (hardware info) from the BIOS</b>
+          <pre class="language-shell"><code>dmidecode</code></pre>
+        </li>
+        <li>
+          <b>Show info about disk sda</b>
+          <pre class="language-shell"><code>hdparm -i /dev/sda</code></pre>
+        </li>
+        <li>
+          <b>Perform a read speed test on disk sda</b>
+          <pre class="language-shell"><code>hdparm -tT /dev/sda</code></pre>
+        </li>
+        <li>
+          <b>Test for unreadable blocks on disk sda</b>
+          <pre class="language-shell"><code>badblocks -s /dev/sda</code></pre>
+        </li>
+        <li>
+          <b>Display and manage the top processes</b>
+          <pre class="language-shell"><code>top</code></pre>
+        </li>
+        <li>
+          <b>Interactive process viewer (top alternative)</b>
+          <pre class="language-shell"><code>htop</code></pre>
+        </li>
+        <li>
+          <b>Display processor related statistics</b>
+          <pre class="language-shell"><code>mpstat 1</code></pre>
+        </li>
+        <li>
+          <b>Display virtual memory statistics</b>
+          <pre class="language-shell"><code>vmstat 1</code></pre>
+        </li>
+        <li>
+          <b>Display I/O statistics</b>
+          <pre class="language-shell"><code>iostat 1</code></pre>
+        </li>
+        <li>
+          <b
+            >Display the last 100 syslog messages (Use /var/log/syslog for
+            Debian based systems.)</b
+          >
+          <pre
+            class="language-shell"
+          ><code>tail -100 /var/log/messages</code></pre>
+        </li>
+        <li>
+          <b>Capture and display all packets on interface eth0</b>
+          <pre class="language-shell"><code>tcpdump -i eth0</code></pre>
+        </li>
+        <li>
+          <b>Monitor all traffic on port 80 ( HTTP )</b>
+          <pre
+            class="language-shell"
+          ><code>tcpdump -i eth0 'port 80'</code></pre>
+        </li>
+        <li>
+          <b>List all open files on the system</b>
+          <pre class="language-shell"><code>lsof</code></pre>
+        </li>
+        <li>
+          <b>List files opened by user</b>
+          <pre class="language-shell"><code>lsof -u user</code></pre>
+        </li>
+        <li>
+          <b
+            >Display free and used memory ( -h for human readable, -m for MB, -g
+            for GB.)</b
+          >
+          <pre class="language-shell"><code>free -h</code></pre>
+        </li>
+        <li>
+          <b>Execute "df -h", showing periodic updates</b>
+          <pre class="language-shell"><code>watch df -h</code></pre>
+        </li>
+        <li>
+          <b>Display the user and group ids of your current user.</b>
+          <pre
+            class="language-shell"
+          ><code>Display the user and group ids of your current user.</code></pre>
+        </li>
+
+        <li>
+          <b>Display the last users who have logged onto the system.</b>
+          <pre class="language-shell"><code>last</code></pre>
+        </li>
+
+        <li>
+          <b>Show who is logged into the system.</b>
+          <pre class="language-shell"><code>who</code></pre>
+        </li>
+        <li>
+          <b>Create a group named "test".</b>
+          <pre class="language-shell"><code>groupadd test</code></pre>
+        </li>
+
+        <li>
+          <b
+            >Create an account named john, with a comment of "John Smith" and
+            create the user's home directory.</b
+          >
+          <pre
+            class="language-shell"
+          ><code>useradd -c "John Smith" -m john</code></pre>
+        </li>
+
+        <li>
+          <b>Delete the john account.</b>
+          <pre class="language-shell"><code>userdel john</code></pre>
+        </li>
+
+        <li>
+          <b>Add the john account to the sales group</b>
+          <pre class="language-shell"><code>usermod -aG sales john</code></pre>
+        </li>
+
+        <li>
+          <b>Display your currently running processes</b>
+          <pre class="language-shell"><code>ps</code></pre>
+        </li>
+
+        <li>
+          <b>Display all the currently running processes on the system.</b>
+          <pre class="language-shell"><code>ps -ef</code></pre>
+        </li>
+
+        <li>
+          <b>Kill process with process ID of pid</b>
+          <pre class="language-shell"><code>kill pid</code></pre>
+        </li>
+
+        <li>
+          <b>Kill all processes named processname</b>
+          <pre class="language-shell"><code>killall processname</code></pre>
+        </li>
+
+        <li>
+          <b>Start program in the background</b>
+          <pre class="language-shell"><code>program &</code></pre>
+        </li>
+
+        <li>
+          <b>Display stopped or background jobs</b>
+          <pre class="language-shell"><code>bg</code></pre>
+        </li>
+
+        <li>
+          <b>Brings the most recent background job to foreground</b>
+          <pre class="language-shell"><code>fg</code></pre>
+        </li>
+
+        <li>
+          <b>Brings job n to the foreground</b>
+          <pre class="language-shell"><code>fg n</code></pre>
+        </li>
+
+        <li>
+          <b>File Permissions</b>
+          <pre class="language-shell"><code>
+            PERMISSION      EXAMPLE
+
+            U   G   W
+            rwx rwx rwx     chmod 777 filename
+            rwx rwx r-x     chmod 775 filename
+            rwx r-x r-x     chmod 755 filename
+            rw- rw- r--     chmod 664 filename
+            rw- r-- r--     chmod 644 filename
+
+            # LEGEND
+              U = User
+              G = Group
+              W = World
+
+              r = Read
+              w = write
+              x = execute
+              - = no access
+          </code></pre>
+        </li>
+
+        <li>
+          <b>Search for a package by keyword.</b>
+          <pre class="language-shell"><code>yum search keyword</code></pre>
+        </li>
+
+        <li>
+          <b>Install package.</b>
+          <pre class="language-shell"><code>yum install package</code></pre>
+        </li>
+
+        <li>
+          <b>Display description and summary information about package.</b>
+          <pre class="language-shell"><code>yum info package
+          </code></pre>
+        </li>
+
+        <li>
+          <b>Install package from local file named package.rpm</b>
+          <pre class="language-shell"><code>rpm -i package.rpm</code></pre>
+        </li>
+
+        <li>
+          <b>Remove/uninstall package.</b>
+          <pre class="language-shell"><code></code></pre>
+        </li>
+
+        <li>
+          <b>yum remove package</b>
+          <pre class="language-shell"><code></code></pre>
+        </li>
+
+        <li>
+          <b>Install software from source code.</b>
+          <pre class="language-shell"><code>
+            tar zxvf sourcecode.tar.gz
+            cd sourcecode
+            ./configure
+            make
+            make install
+          </code></pre>
+        </li>
+
+        <li>
+          <b>Search for pattern in file</b>
+          <pre class="language-shell"><code>
+            grep pattern file
+          </code></pre>
+        </li>
+
+        <li>
+          <b>Search recursively for pattern in directory</b>
+          <pre
+            class="language-shell"
+          ><code>grep -r pattern directory</code></pre>
+        </li>
+
+        <li>
+          <b>Find files and directories by name</b>
+          <pre class="language-shell"><code>locate name
+          </code></pre>
+        </li>
+
+        <li>
+          <b>Find files in /home/john that start with "prefix".</b>
+          <pre
+            class="language-shell"
+          ><code>find /home/john -name 'prefix*'</code></pre>
+        </li>
+
+        <li>
+          <b>Find files larger than 100MB in /home</b>
+          <pre class="language-shell"><code>find /home -size +100M</code></pre>
+        </li>
+
+        <li>
+          <b>Show free and used space on mounted filesystems</b>
+          <pre class="language-shell"><code>df -h</code></pre>
+        </li>
+
+        <li>
+          <b>Show free and used inodes on mounted filesystems</b>
+          <pre class="language-shell"><code>df -i</code></pre>
+        </li>
+
+        <li>
+          <b>Display disks partitions sizes and types</b>
+          <pre class="language-shell"><code>fdisk -l</code></pre>
+        </li>
+
+        <li>
+          <b
+            >Display disk usage for all files and directories in human readable
+            format</b
+          >
+          <pre class="language-shell"><code>du -ah</code></pre>
+        </li>
+
+        <li>
+          <b>Display total disk usage off the current directory</b>
+          <pre class="language-shell"><code>du -sh</code></pre>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
