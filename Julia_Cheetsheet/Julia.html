@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <title>Julia Cheatsheet</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            Julia Cheatsheet
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li><b>What is Julia Programming Language:</b> <br><br> Julia is a high-level, high-performance dynamic
+                language for technical computing.
+                While it is a general-purpose language and can be used to write any application, many of its features
+                are well suited for numerical analysis and also computational science. <br> <br>
+                Work on Julia was started in 2009, by Jeff Bezanson, Stefan Karpinski, Viral B. Shah, and Alan Edelman,
+                who set out to create a free language that was both high-level and fast.
+                Julia was created in 2012, In 14 February 2012, the team launched a website with a blog post explaining
+                the language's mission. <br> <br>
+            </li> <br>
+            <hr> <br>
+
+            <li><b>Main Features according to official website:</b> <br><br>
+
+                <ul>
+                    <li>Multiple dispatch: providing ability to define function behavior across many combinations of
+                        argument types</li>
+                    <li>Dynamic type system: types for documentation, optimization, and dispatch</li>
+                    <li>Performance approaching that of statically-typed languages like C</li>
+                    <li>A built-in package manager</li>
+                    <li>Lisp-like macros and other metaprogramming facilities</li>
+                    <li>Call C functions directly: no wrappers or special APIs</li>
+                    <li>Ability to interface with other languages, e.g. Python with PyCall,[b] R with RCall, and
+                        Java/Scala with JavaCall</li>
+                    <li> Powerful shell-like abilities to manage other processes</li>
+                    <li> Designed for parallel and distributed computing</li>
+                    <li>Coroutines: lightweight green threading</li>
+                    <li> User-defined types are as fast and compact as built-ins</li>
+                    <li>Automatic generation of efficient, specialized code for different argument types</li>
+                    <li> Elegant and extensible conversions and promotions for numeric and other types</li>
+                    <li>Efficient support for Unicode, including but not limited to UTF-8</li>
+                </ul>
+            </li> <br>
+            <hr> <br>
+
+            <li><b>Basics:</b> <br><br>
+                <pre class="language-js"><code>
+    Assignment	              answer = 42
+                            x, y, z = 1, [1:10; ], "A string"
+                            x, y = y, x # swap x and y
+
+    Constant declaration	  const DATE_OF_BIRTH = 2012
+
+    End-of-line comment	      i = 1 # This is a comment
+
+    Delimited comment	      #= This is another comment =#
+
+    Chaining	              x = y = z = 1  # right-to-left
+                                      0 < x < 3      # true
+                                      5 < x != y < 5 # false
+
+    Function definition	      function add_one(i)
+                                        return i + 1
+                                      end
+
+    Insert LaTeX symbols	  \delta + [Tab] </code></pre>
+            </li> <br>
+            <hr> <br>
+
+            <li><b>Operators:</b> <br><br>
+                <pre class="language-js"><code>
+    Basic arithmetic	            +, -,*,/
+
+    Exponentiation	               2^3 == 8
+
+    Division	                   3/12 == 0.25
+
+    Inverse division	           7\3 == 3/7
+
+    Remainder	                   x % y or rem(x,y)
+
+    Negation	                   !true == false
+
+    Equality	                   a == b
+
+    Inequality	                   a != b or a ≠ b
+
+    Less and larger than	       < and >
+
+    Less than or equal to	       <= or ≤
+
+    Greater than or equal to	   >= or ≥
+
+    Element-wise operation	       [1, 2, 3] .+ [1, 2, 3] == [2, 4, 6]
+                                   [1, 2, 3] .* [1, 2, 3] == [1, 4, 9]
+
+    Not a number	               isnan(NaN) not(!) NaN == NaN
+
+    Ternary operator	           a == b ? "Equal" : "Not equal"
+
+    Short-circuited AND and OR	   a && b and a || b
+
+    Object equivalence	           a === b </code></pre>
+            </li> <br>
+            <hr> <br>
+
+            <li><b>Standard libraries:</b> <br><br>
+                <pre class="language-js"><code>
+    To help Julia load faster, many core functionalities exist in 
+    standard libraries that come bundled with Julia. To make their 
+    functions available, use using PackageName. Here are some Standard 
+    Libraries and popular functions.
+
+ 	 
+    Random	         rand, randn, randsubseq
+
+    Statistics	    mean, std, cor, median, quantile
+
+    LinearAlgebra	I, eigvals, eigvecs, det, cholesky
+
+    SparseArrays	sparse, SparseVector, SparseMatrixCSC
+
+    Distributed	    @distributed, pmap, addprocs
+
+    Dates	        DateTime, Date
+
+                    </code></pre>
+            </li> <br>
+            <hr> <br>
+
+            <li><b>Characters and strings:</b> <br><br>
+                <pre class="language-js"><code>
+    Character	                chr = 'C'
+
+    String	                    str = "A string"
+
+    Character code	            Int('J') == 74
+
+    Character from code	        Char(74) == 'J'
+
+    Any UTF character	        chr = '\uXXXX'     # 4-digit HEX
+                                 chr = '\UXXXXXXXX' # 8-digit HEX
+
+    Loop through characters	    for c in str
+                                  println(c)
+                                end 
+
+    Concatenation	            str = "Learn" * " " * "Julia"
+
+    String interpolation	    a = b = 2
+                                 println("a * b = $(a*b)")
+
+    First matching character    findfirst(isequal('i'), "Julia")
+
+    or regular expression	       == 4
+
+    Replace substring or        replace("Julia", "a" => "us") == "Julius"
+    regular expression	  
+
+    Last index (of collection)	    lastindex("Hello") == 5
+
+    Number of characters	        length("Hello") == 5
+
+    Regular expression	            pattern = r"l[aeiou]"
+
+    Subexpressions	                str = "+1 234 567 890"
+                                     pat = r"\+([0-9]) ([0-9]+)"
+                                     m = match(pat, str)
+                                     m.captures == ["1", "234"]
+
+    All occurrences	                [m.match for m = eachmatch(pat, str)]
+
+    All occurrences (as iterator)	          eachmatch(pat, str)
+    Beware of multi-byte Unicode encodings in UTF-8: 
+    10 == lastindex("Ångström") != length("Ångström") == 8
+    Strings are immutable. </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>The shell a.k.a. REPL :</b>
+                <pre class="language-js"><code>
+    Recall last result	        ans
+    Interrupt execution	        [Ctrl] + [C]
+    Clear screen	            [Ctrl] + [L]
+    Run program	                include("filename.jl")
+    Get help for func           ?func
+    is defined	  
+    See all places where        apropos("func")
+     func is defined	
+    Command line mode	        ; on empty line
+    Package Manager mode	    ] on empty line
+    Help mode	                ? on empty line
+    Exit special mode / 
+    Return to REPL	            [Backspace] on empty line
+    Exit REPL	                exit() or [Ctrl] + [D] </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Standard libraries:</b> <br><br>
+                To help Julia load faster, many core functionalities exist in standard libraries that
+                come bundled with Julia. To make their functions available, use using PackageName.
+                Here are some Standard Libraries and popular functions.
+                <pre class="language-js"><code>
+    Random	                  rand, randn, randsubseq
+    Statistics	              mean, std, cor, median, quantile
+    LinearAlgebra	          I, eigvals, eigvecs, det, cholesky
+    SparseArrays	          sparse, SparseVector, SparseMatrixCSC
+    Distributed	              @distributed, pmap, addprocs
+    Dates	                  DateTime, Date
+                     </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Package management:</b><br><br>
+                Packages must be registered before they are visible to the package manager.
+                In Julia 1.0, there are two ways to work with the package manager:
+                either with using Pkg and using Pkg functions, or by typing ] in the REPL to
+                enter the special interactive package management mode.
+                (To return to regular REPL, just hit BACKSPACE on an empty line in package management mode).
+                Note that new tools arrive in interactive mode first, then usually also become available in
+                regular Julia sessions through Pkg module.
+                <br>
+                <pre class="language-js"><code>
+    Using Pkg in Julia session:-
+
+    List installed packages (human-readable)	Pkg.status()
+    Update all packages	                        Pkg.update()
+    Install PackageName	                        Pkg.add("PackageName")
+    Rebuild PackageName	                        Pkg.build("PackageName")
+    Use PackageName (after install)	            using PackageName
+    Remove PackageName	                        Pkg.rm("PackageName")
+    
+    In Interactive Package Mode:-
+
+ 	Add PackageName	                            add PackageName
+    Remove PackageName	                        rm PackageName
+    Update PackageName	                        update PackageName
+    Use development version	                 dev PackageName or dev GitRepoUrl
+    Stop using development version,             free PackageName
+     revert to public release	
+       </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Numbers:</b>
+                <pre class="language-js"><code>
+    Integer types	           IntN and UIntN, with 
+                               N ∈ {8, 16, 32, 64, 128}, BigInt
+
+    Floating-point types	   FloatN with N ∈ {16, 32, 64}
+                               BigFloat
+
+    Minimum and maximum        typemin(Int8)
+
+     values by type	           typemax(Int64)
+
+    Complex types	           Complex{T}
+
+    Imaginary unit	           im
+
+    Machine precision	       eps() # same as eps(Float64)
+
+    Rounding	               round()       # floating-point
+                               round(Int, x) # integer
+
+    Type conversions	       convert(TypeName, val)  # attempt/error
+                               typename(val)           # calls convert
+
+    Global constants	       pi # 3.1415...
+                               π  # 3.1415...
+                               im # real(im * im) == -1
+
+    More constants	           using Base.MathConstants
+
+    Julia does not automatically check for numerical overflow. Use package 
+    SaferIntegers for ints with overflow checking.
+       </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Random Numbers:</b><br><br>
+                Many random number functions require using Random.
+                <pre class="language-js"><code>
+    Set seed	                  seed!(seed)
+
+    Random numbers	              rand()   # uniform [0,1)
+                                  randn()  # normal (-Inf, Inf)
+
+    Random from Other
+    Distribution	              using Distributions
+                                   my_dist = Bernoulli(0.2) # For example
+                                   rand(my_dist)
+
+    Random subsample 
+    elements from A with 
+    inclusion probability p	       randsubseq(A, p)
+
+    Random permutation elements of A	 shuffle(A)
+                </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Arrays:</b>
+                <pre class="language-js"><code>
+    Declaration	                         arr = Float64[]
+
+    Pre-allocation	                     sizehint!(arr, 10^4)
+
+    Access and assignment	             arr = Any[1,2]
+                                         arr[1] = "Some text"
+
+    Comparison	                         a = [1:10;]
+                                         b = a      # b points to a
+                                         a[1] = -99
+                                         a == b     # true
+
+    Copy elements (not address)	         b = copy(a)
+                                         b = deepcopy(a)
+
+    Select subarray from m to n	         arr[m:n]
+
+    n-element array with 0.0s	         zeros(n)
+
+    n-element array with 1.0s	         ones(n)
+
+    n-element array with #undefs	     Vector{Type}(undef,n)
+
+    n equally spaced numbers from
+    start to stop	                     range(start,stop=stop,length=n)
+
+    Array with n random Int8 elements	 rand(Int8, n)
+
+    Fill array with val	                 fill!(arr, val)
+
+    Pop last element	                 pop!(arr)
+
+    Pop first element	                 popfirst!(a)
+
+    Push val as last element	         push!(arr, val)
+
+    Push val as first element	         pushfirst!(arr, val)
+
+    Remove element at index idx	         deleteat!(arr, idx)
+
+    Sort	                             sort!(arr)
+
+    Append a with b	                     append!(a,b)
+
+    Check whether val is element	     in(val, arr) or val in arr
+
+    Scalar product	                     dot(a, b) == sum(a .* b)
+
+    Change dimensions (if possible)	     reshape(1:6, 3, 2)' == [1 2 3; 4 5 6]
+
+    To string 
+    (with delimiter del between elements)	    join(arr, del)</code></pre>
+
+            </li><br>
+            <hr> <br>
+
+            <li><b>Linear Algebra:</b>
+                <pre class="language-js"><code>
+    For most linear algebra tools, use using LinearAlgebra.
+
+ 	 
+    Identity matrix	                    I  # just use variable I. Will
+                                        automatically conform to dimensions required.
+    Define matrix	                    M = [1 0; 0 1]
+    Matrix dimensions	                size(M)
+    Select i th row	                    M[i, :]
+    Select i th column	                M[:, i]
+    Concatenate horizontally	        M = [a b] or M = hcat(a, b)
+    Concatenate vertically	            M = [a ; b] or M = vcat(a, b)
+    Matrix transposition	            transpose(M)
+    Conjugate matrix 
+    transposition	                    M' or adjoint(M)
+    Matrix trace	                    tr(M)
+    Matrix determinant	                det(M)
+    Matrix rank	                        rank(M)
+    Matrix eigenvalues	                eigvals(M)
+    Matrix eigenvectors	                eigvecs(M)
+    Matrix inverse	                    inv(M)
+    Solve M*x == v	                    M\v is better than inv(M)*v
+    Moore-Penrose pseudo-inverse	    pinv(M)
+    Julia has built-in support for matrix decompositions.
+
+ Julia tries to infer whether matrices are of a special type (symmetric, hermitian, etc.), 
+ but sometimes fails. To aid Julia in dispatching the optimal algorithms, special matrices can be
+ declared to have a structure with functions like Symmetric , Hermitian , UpperTriangular, 
+ LowerTriangular, Diagonal , and more.
+                </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Control flow and loops:</b>
+                <pre class="language-js"><code>
+    Conditional	                    if-elseif-else-end
+    Simple for loop	                for i in 1:10
+                                    println(i)
+                                    end
+    Unnested for loop	            for i in 1:10, j = 1:5
+                                    println(i*j)
+                                    end
+    Enumeration	                    for (idx, val) in enumerate(arr)
+                                    println("the $idx-th element is $val")
+                                    end
+    while loop	                    while bool_expr
+                                    # do stuff
+                                    end
+    Exit loop	                    break
+    Exit iteration	                continue</code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Dictionaries:</b>
+                <pre class="language-js"><code>
+    Dictionary	              d = Dict(key1 => val1, key2 => val2, ...)
+                              d = Dict(:key1 => val1, :key2 => val2, ...)
+    All keys (iterator)	      keys(d)
+    All values (iterator)	  values(d)
+    Loop through 
+    key-value pairs	          for (k,v) in d
+                              println("key: $k, value: $v")
+                              end
+    Check for key :k	      haskey(d, :k)
+    Copy keys (or values)
+     to array	              arr = collect(keys(d))
+                              arr = [k for (k,v) in d]
+
+    Dictionaries are mutable; when symbols are used as keys, the keys are immutable. </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Sets:</b>
+                <pre class="language-js"><code>
+    Declaration	             s = Set([1, 2, 3, "Some text"])
+    Union s1 ∪ s2	         union(s1, s2)
+    Intersection s1 ∩ s2	 intersect(s1, s2)
+    Difference s1 \\ s2	     setdiff(s1, s2)
+    Difference s1 △ s2	     symdiff(s1, s2)
+    Subset s1 ⊆ s2	         issubset(s1, s2)     
+
+    Checking whether an element is contained in a set is done in O(1). </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Collection functions:</b>
+                <pre class="language-js"><code>
+    Apply f to all elements 
+    of collection coll	            map(f, coll) or
+                                    map(coll) do elem
+                                       # do stuff with elem
+                                       # must contain return
+                                    end
+    Filter coll for 
+    true values of f	            filter(f, coll)
+    List comprehension	            arr = [f(elem) for elem in coll] </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Types:</b> <br><br>
+
+    Julia has no classes and thus no class-specific methods.
+    Types are like classes without methods.
+    Abstract types can be subtyped but not instantiated.
+    Concrete types cannot be subtyped.
+    By default, struct s are immutable.
+    Immutable types enhance performance and are thread safe,
+    as they can be shared among threads without the need for synchronization.
+    Objects that may be one of a set of types are called Union types.
+
+ 	 
+                <pre class="language-js"><code>
+    Type annotation	            var::TypeName
+    Type declaration	        struct Programmer
+                                 name::String
+                                 birth_year::UInt16
+                                 fave_language::AbstractString
+                                end
+    Mutable type declaration	replace struct with mutable struct
+    Type alias	                const Nerd = Programmer
+    Type constructors	        methods(TypeName)
+    Type instantiation	        me = Programmer("Ian", 1984, "Julia")
+                                me = Nerd("Ian", 1984, "Julia")
+    
+    Subtype declaration	        abstract type Bird end
+                                struct Duck <: Bird
+                                  pond::String
+                                end
+    Parametric type	            struct Point{T <: Real}
+                                x::T
+                                y::T
+                                end
+
+                                p =Point{Float64}(1,2)
+    Union types	                Union{Int, String}
+    Traverse type hierarchy	    supertype(TypeName) and subtypes(TypeName)
+    Default supertype	        Any
+    All fields	               fieldnames(TypeName)
+    All field types	           TypeName.types </code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Missing and Nothing:</b>
+                <pre class="language-js"><code>
+    Programmers Null	        nothing
+    Missing Data	            missing
+    Not a Number in Float	    NaN
+    Filter missings	            collect(skipmissing([1, 2, missing])) == [1,2]
+    Replace missings	        collect((df[:col], 1))
+    Check if missing	        ismissing(x) not x == missing</code></pre>
+            </li><br>
+            <hr> <br>
+
+            <li><b>Exceptions:</b>
+                <pre class="language-js"><code>
+    Throw SomeExcep	          throw(SomeExcep())
+    Rethrow current 
+    exception	              rethrow()
+    Define NewExcep	          struct NewExcep <: Exception
+                              v::String
+                              end
+                    
+                              Base.showerror(io::IO, e::NewExcep) = print(io, "A problem with $(e.v)!")
+                    
+                              throw(NewExcep("x"))
+    Throw error with msg
+     text	                  error(msg)
+    Handler	                  try
+                                # do something potentially iffy
+                              catch ex
+                              if isa(ex, SomeExcep)
+                                # handle SomeExcep
+                              elseif isa(ex, AnotherExcep)
+                                # handle AnotherExcep
+                              else
+                                # handle all others
+                              end
+                             finally
+                                # do this in any case
+                             end </code></pre>
+            </li><br>
+            <hr> <br> <br> <br>
+
+            <li>
+                <b>References :-</b> <hr>
+                <br>
+
+                1.  The Julia Programming Language (Official Website) <br>
+                2.  Wikipedia <br>
+                3.  juliadocs.github.io/Julia-Cheat-Sheet/ <br>
+                
+            </li><br>
+            <hr> <br>
+
+            
+
+        </ol>
+    </div>
+
+</body>
+
+</html>
