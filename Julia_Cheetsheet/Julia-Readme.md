@@ -29,7 +29,7 @@ Julia is a high-level, high-performance dynamic language for technical computing
 <br />
 
 
-  ![alt text](https://github.com/ayush-sleeping/Its-Nothing-don-t-open-it/blob/main/Julia-PL-ss.png)
+  ![alt text]https://github.com/ayush-sleeping/Its-Nothing-don-t-open-it/blob/main/Julia-PL-ss2.png)
 
 <br />
 
