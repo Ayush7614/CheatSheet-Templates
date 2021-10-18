@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Pictures/Awesome Cheatsheets.png" type="image/x-icon">
+    <title>Kotlin Cheatsheet By Tamal Das</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            This Kotlin Cheatsheet is for you!!!!!
+        </div>
+    </nav>
+    <div class="container">
+
+
+        <h2 style="color: red;">Basics:</h2>
+        <br>
+            <li><b>Simple Hello World Program:</b> Boilerplate <code></code>
+                <pre class="language-js"><code>fun main(args: Array<String>) {
+                    println("Hello, World")
+                 } </code></pre>
+            </li> 
+            <br>
+            <li><b>Declaring Functions:</b> <code></code>
+                <pre class="language-js"><code>fun sum(a: Int, b: Int): Int {
+                return a + b
+                } </code></pre>
+            </li>
+            <br>
+            <li><b>Single Expression Functions:</b><code></code>
+                <pre class="language-js"><code>fun sum(a: Int, b: Int) = a + b</code></pre>
+            </li>
+            <br>
+            <li><b>Declaring Variables:</b><code></code>
+                <pre class="language-js"><code>
+                val name = ”Marcin” // Can't be changed
+                var age = 5 // Can be changed
+                age++ </code></pre>
+            </li>
+            <br>
+            <li><b>Variables with Nullable Types:</b><code></code>
+                <pre class="language-js"><code>
+                var name: String? = null
+                val length: Int
+                length = name?.length ?: 0
+                // length, or 0 if name is null
+                length = name?.length ?: return
+                // length, or return when name is null
+                length = name?.length ?: throw Error()
+                // length, or throw error when name is null
+            </code></pre>
+            </li>
+            <br><br>
+
+
+            <h2 style="color: red;">Data Types:</h2>
+            <br>
+               <p> The primitives defined in Kotlin are defined below---</p> 
+            <br>
+               <li><b>byte:</b> byte is a primitive data type it only takes up 8 bits of memory.
+                <pre class="language-js"><code>val oneByte: Byte=1 //Byte</code></pre>
+            </li> 
+            <br>
+            <li><b>long:</b> long is another primitive data type related to integers. long takes up 64 bits of memory.
+                <pre class="language-js"><code>val oneLong=1L //Long</code></pre>
+            </li>
+             <br>
+            <li><b>float:</b> We represent basic fractional numbers in Java using the float type. This is a single-precision decimal number. Which means if we get past six decimal points, this number becomes less precise and more of an estimate.
+                <pre class="language-js"><code>
+                    val pi=3.14 //Double
+                    //val one: Double=1 //Error: type mismatched
+                    val oneDouble=1.0 //Double
+                </code></pre>
+            </li>  
+            <br>
+            <li><b>boolean:</b> The simplest primitive data type is boolean. It can contain only two values: true or false. It stores its value in a single bit.
+                <pre class="language-js"><code>val isKotlinFun: Boolean = true
+                val isFishTasty: Boolean = false
+                println(isKotlinFun) // Outputs true
+                println(isFishTasty) // Outputs false</code></pre>
+            </li> 
+            <br>
+            <li><b>int:</b> int holds a wide range of non-fractional number values.
+                <pre class="language-js"><code>val one=1 //int</code></pre>
+            </li>
+             <br><br>
+
+
+            <h2 style="color: red;">Comments</h2>
+            <br>
+            <p>A comment is the code that is not executed by the compiler, and the programmer uses it to keep track of the code.</p>
+            <br>
+            <li><b>Single line comment:</b>
+                <pre class="language-js"><code>// It's a single line comment</code></pre>
+            </li>
+            <br> 
+            <li><b>Multi-line comment:</b>
+                <pre class="language-js"><code>/* It's a 
+                    multi-line
+                    comment
+                    */</code></pre>
+            </li>
+            <br><br>
+
+
+            <h2 style="color: red;">Constants</h2>
+            <br> 
+            <li><b>Constants are like a variable, except that their value never changes during program execution.</b>
+                <pre class="language-js"><code>const val empName="employee_1"
+                    println(empName)
+                </code></pre>
+            </li> 
+            <br><br>
+
+
+            <h2 style="color: red;">Arithmetic Operations</h2>
+            <br>
+            <li><b>Addition:</b> It can be used to add two numbers
+                <pre class="language-js"><code>val x = 10 + 3;</code></pre>
+            </li> 
+            <br>
+            <li><b>Subtraction:</b> It can be used to subtract two numbers
+                <pre class="language-js"><code>val x = 10 - 3;</code></pre>
+            </li>
+            <br>
+            <li><b>Multiplication:</b> It can be used to multiply two numbers
+                <pre class="language-js"><code>val x = 10 * 3;</code></pre>
+            </li>
+            <br>
+            <li><b>Division:</b> It can be used to divide two numbers
+                <pre class="language-js"><code>
+                    val x = 10 / 3;
+                    float x = (float)10 / (float)3;</code></pre>
+            </li>
+            <br>
+            <li><b>Modulo Remainder:</b>It returns the remainder of the two numbers after division
+                <pre class="language-js"><code>val x = 10 % 3;</code></pre>
+            </li>
+            <br><br>
+
+
+            <h2 style="color: red;">Augmented Operators</h2>
+            <br>
+            <li><b>Addition assignment:</b> 
+                <pre class="language-js"><code>var += 10 // var = var + 10</code></pre>
+            </li>
+            <br>
+            <li><b>Subtraction assignment:</b> 
+                <pre class="language-js"><code>var -= 10 // var = var - 10</code></pre>
+            </li>
+            <br>
+            <li><b>Multiplication assignment:</b> 
+                <pre class="language-js"><code>var *= 10 // var = var * 10</code></pre>
+            </li>
+            <br>
+            <li><b>Division assignment:</b>
+                <pre class="language-js"><code>var /= 10 // var = var / 10</code></pre>
+            </li>
+            <br>
+            <li><b>Modulus assignment:</b> 
+                <pre class="language-js"><code>var %= 10 // var = var % 10</code></pre>
+            </li>
+            <br><br>
+
+
+            <h2 style="color: red;">Loops</h2>
+            <br>
+            <p>Loops are a way to repeat statements in a program for as long as the specified conditions remain true</p>
+            <br>
+            <li><b>For Loop:</b>
+                <pre class="language-js"><code>var max = a
+                if (a < b)
+                    max=b // With else var max: Int if (a> b) {
+                    max = a
+                    }
+                     else {
+                    max = b
+                    }
+                    val max = if (a > b) {
+                    print("Choose a")// a
+                    } 
+                    else {
+                    print("Choose b")// b
+                    }
+
+                </code></pre>
+            </li>
+            <br>
+            <li><b>While Loop:</b> 
+                <pre class="language-js"><code>when (x) {
+                1 -> print("x == 1")
+                2 -> print("x == 2")
+                else -> {
+                print("x is neither 1 nor 2")
+                }
+                }
+            </code></pre>
+            </li>
+            <br>
+            <li><b>When Loop:</b>
+                <pre class="language-js"><code>fun numberTypeName(x: Number) = when(x) {
+                0 -> "Zero" // Equality check
+                in 1..4 -> "Four or less" // Range check
+                5, 6, 7 -> "Five to seven" // Multiple values
+                is Byte -> "Byte" // Type check
+                else -> "Some number"
+                }
+            </code></pre>
+            </li>
+            <br>
+            <li><b>When expression with predicates:</b>
+                <pre class="language-js"><code>fun signAsString(x: Int)= when {
+                x < 0 -> "Negative"
+                    x == 0 -> "Zero"
+                    else -> "Positive"
+                    }
+                        </code></pre>
+            </li>
+            <br><br>
+
+
+            <h2 style="color: red;">Functions</h2>
+            <br>
+            <li><b>Functions Types:</b>
+            <br><br>
+            <li>()->Unit - takes no arguments and returns nothing (Unit).</li>
+            <li>(Int, Int)->Int - takes two arguments of type Int
+            and returns Int.</li>
+           <li> (()->Unit)->Int - takes another function
+            and returns Int.</li>
+           <li> (Int)->()->Unit - takes argument of type Int
+            and returns function.</li>
+            </li>
+            <br>
+            <li> <b>Function Literals:</b>
+            <pre class="language-js"><code>val add: (Int, Int) -> Int = { i, j -> i + j }
+            // Simple lambda expression
+            val printAndDouble: (Int) -> Int = {
+            println(it)
+            // When single parameter, we can reference it using `it`
+            it * 2 // In lambda, last expression is returned
+            }
+            // Anonymous function alternative
+            val printAndDoubleFun: (Int) -> Int = fun(i: Int): Int {
+            println(i) 
+            return i * 2 // Needs return like any function
+            }
+            val i = printAndDouble(10) // 10
+            print(i) // 2
+            </code></pre>
+            </li>
+            <br><br>
+
+
+            <h2 style="color: red;">Classes</h2>
+            <br>
+            <li><b>Primary Constructor:</b></li>
+            <pre class="language-js"><code>
+                val declares a read-only property, var a mutable one
+                class Person(val name: String, var age: Int)
+                // name is read-only, age is mutable
+            </code></pre>
+            <br>
+            <li><b>Properties with assessors:</b></li>
+            <pre class="language-js"><code>
+                        class Person(var name: String, var surname: String) {
+                        var fullName: String
+                        get() = "$name $surname"
+                        set(value) {
+                        val (first, rest) = value.split(" ", limit = 2)
+                        name = first
+                        surname = rest
+                        }
+                        }
+                        </code></pre>
+            <br>
+            <li><b>Inheritence:</b></li>
+            <pre class="language-js"><code>
+                            open class Person(val name: String) {
+                            open fun hello() = "Hello, I am $name"
+                            // Final by default so we need open
+                            }
+                            class PolishPerson(name: String) : Person(name) {
+                            override fun hello() = "Dzien Dobrey, jestem $name"
+                            }
+                        </code></pre>
+            <br>
+            <li><b>Data Classes:</b></li>
+            <pre class="language-js"><code>
+                            data class Person(val name: String, var age: Int)
+                            val mike = Person("Mike", 23)
+
+
+                            /*Modifier data adds:
+                            1. toString that displays all primary constructor
+                            properties
+                            print(mike.toString()) // Person(name=Mike, age=23)
+                            2. equals that compares all primary constructor
+                            properties
+                            print(mike == Person("Mike", 23)) // True
+                            print(mike == Person("Mike", 21)) // False
+                            3. hashCode that is based on all primary
+                            constructor properties
+                            val hash = mike.hashCode()
+                            print(hash == Person("Mike", 23).hashCode()) // True
+                            print(hash == Person("Mike", 21).hashCode()) // False
+                            4. component1, component2 etc. that allows
+                            deconstruction
+                            val (name, age) = mike
+                            print("$name $age") // Mike 23
+                            5. copy that returns copy of object with concrete
+                            properties changed
+                            val jake = mike.copy(name = "Jake")*/
+
+                        </code></pre>
+            <br><br>
+
+        </ol>
+    </div>
+</body>
+
+</html>

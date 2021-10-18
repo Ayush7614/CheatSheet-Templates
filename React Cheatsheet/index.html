@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://websitesetup.org/javascript-cheat-sheet/">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Pictures/Awesome Cheatsheets.png" type="image/x-icon">
+    <title>React Cheatsheet by Pityubak</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            Here is the React Cheatsheet For You !
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li><h2>Importing React </h2>
+                <pre class="language-jsx"><code>import React from 'react'
+import ReactDOM from 'react-dom'</code></pre>
+            </li> 
+            <li><h2>Components types</h2>
+                <ul>
+                    <li>
+                        </br> Class componets have state.
+                        <pre class="language-jsx"><code>class SimpleComponent extends React.Component {
+    render () {
+        return &lt;div className='myClassName'&gt;
+        This is simple component
+        &lt;/div&gt;
+    }
+}</code></pre> </li>
+<li></li></br>Pure components are performance-optimized and doesn’t rerender if props/state hasn’t changed.
+<pre class="language-js"><code>import React, {PureComponent} from 'react'
+
+class PureComponentExample extends PureComponent {
+}
+</code></pre>
+</li>
+<li>
+</br>Functional components have no state. Also, their props are passed as the first parameter to a function.
+<pre class="language-jsx"><code>function FunctionalExample ({ yourProps }) {
+    return &lt;div className='yourClassName'&gt;
+      Hello {yourProps}&lt;/div&gt;
+  }</code>
+</pre>
+</li>
+
+                </ul>
+            </li>
+            <li>
+                <h2>States</h2>
+                    <pre class="language-jsx"><code>constructor(props) {
+    super(props)
+    this.state = { someVariable: undefined }
+}</code></pre>
+    <ul>
+        <li>Updating states in class component.This is recommended way, do no mutate state directly.
+            <pre class="language-jsx"><code>this.setState({ someVariable: 'mutable' })</code></pre>
+        </li>
+        <li>Functional components have no state, but  we can achieve a similar effect with useState hook.
+            <pre class="language-jsx"><code>const [someVariable,setSomeVariable] = React.useState(undefined)
+
+setSomeVariable('mutable')</code></pre>
+        </li>
+    </ul>
+            </li>
+            <li>
+                <h2>Properties</h2>
+    <ul>
+        <li></br>You can  access properties passed to the class component with this.props.
+            <pre class="language-jsx"><code>{/*You can access this way:*/}
+this.props.someProps
+{/* or this way */} 
+const {soemVariable,anotherVariable}=this.props
+{/* Children are passed as the children property. */}
+render () {
+    return &lt;div className='children'&gt;
+      {this.props.children}
+    &lt;/div&gt;
+  }
+            </code></pre>
+        </li>
+        <li>Functional components are passed as the first parameter to a function. 
+            <pre class="language-jsx"><code>const PropsExample=({firstProps,secondProps})=>
+(&lt;div&gt;This is {firstProps} and this second:{secondProps}&lt;/div&gt;)</code></pre>
+        </li>
+    </ul>
+            </li>
+            <li>
+                <h2>Nesting</h2>
+            </br>If you want to add multiple children, then you have wrap them.
+            <pre class="language-jsx"><code>{/*With extra wrapping node*/}
+&lt;div&gt;
+    &lt;AlertComponent /&gt;
+    &lt;SecondChildComponent /&gt;
+&lt;/div&gt;
+{/*With fragments:*/}
+&lt;&gt;
+    &lt;AlertComponent /&gt;
+    &lt;SecondChildComponent /&gt;
+&lt;/&gt;
+&lt;Fragment&gt;
+    &lt;AlertComponent /&gt;
+    &lt;SecondChildComponent /&gt;
+&lt;Fragment/&gt;
+            </code></pre>
+            </li>
+            <li>
+                <h2>DOM Events</h2>
+                <pre class="language-jsx"><code>class MyComponent extends Component {
+    constructor(props){
+        super(props)
+        this.state={value:null}
+    }
+    render () {
+        &lt;input type="text"
+        value={this.state.value}
+        onChange={event => this.onChange(event)} /&gt;
+            }
+                  
+    onChange (event) {
+        this.setState({ value: event.target.value })
+    }
+}</code></pre>
+            </li>
+            <li>
+                <h2>References</h2>
+                <pre class="language-jsx"><code>class MyComponent extends Component {
+    render () {
+        return ( &lt;div&gt;
+            &lt;input ref={el => this.input = el} /&gt;
+        &lt;/div&gt;)
+        }
+                  
+    componentDidMount () {
+        this.input.focus()
+    }
+}</code></pre>
+            </li>
+            <li>
+                <h2> Conditionals</h2>
+                <pre class="language-jsx"><code>&lt;&gt;
+{showSomeComponent
+    ? &lt;SomeComponent /&gt;
+    : &lt;FallbackComponent /&gt;}
+&lt;/&gt;</code></pre>
+            </li>
+            <li>
+                <h2> Short-circuit evaluation</h2>
+                <pre class="language-jsx"><code>&lt;&gt;
+{showSomeComponent && &lt;MyComponent /&gt;}
+&lt;/&gt;</code></pre>
+            </li>
+            <li>
+                <h2>Inline style</h2>
+                <pre class="language-jsx"><code>{/*Inline style*/}
+const style = { color: 'yellow' }
+return &lt;div style={style}&gt;Some text&lt;/div&gt;
+
+return &lt;div style={{ margin: 0, padding: 0 }}&gt;&lt;/div&gt;</code></pre>
+            </li>
+        </ol>
+    </div>
+</body>
+
+</html>

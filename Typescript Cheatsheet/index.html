@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="prism.css" />
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css" />
+        <title>Typescript Cheatsheet by rene-ph</title>
+      </head>
+      <body>
+        <nav>
+          <span class="logo"><img src="copy.png" alt="" /></span>
+          <div class="content center">This Typescript Cheatsheet For You!</div>
+        </nav>
+        <div class="container">
+            <ol>
+                <li>
+                    <b>Basic Types</b>
+                    <pre class="language-typescript"><code>
+                        let varName: any;       // Untyped, it could be any type
+                        let varName: object;    // A non primitve value
+                        let varName: undefined; // An undefined value 
+                        let varName: null;      // A null value
+                        let varName: unknown;   // A value with an unknown type
+                        let varName: string;    // A string
+                        let varName: number;    // A number that can be float or int
+                        let varName: boolean;   // A true or false value
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Example to define an Array</b>
+                    <pre class="language-typescript"><code>
+                        string[] or Array&lt;string&gt;  // An array of strings
+                        number[] or Array&lt;number&gt;  // An array of numbers
+                        any[]    or Array&lt;any&gt;     // An array of anything
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Example of Object types</b>
+                    <pre class="language-typescript"><code>
+                        {
+                            id: number;
+                            name: string;
+                            age: number;
+                            address: string[];
+                        }
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Tuples</b>
+                    <pre class="language-typescript"><code>
+                        // Example of Basic Tuples
+                        let myTuple: [ number, string, boolean? ];
+                        myTuple = [ 'test', 42 ];
+
+                        // Example of Named Tuples
+                        type Graph2D = [x: number, y: number];
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Enums</b>
+                    <pre class="language-typescript"><code>
+                        enum Options {
+                            FIRST,
+                            DECLARATION = 1,
+                            BOOLEAN = Options.FIRST | Options.EXPLICIT,
+                            COMPUTED = getValue()
+                        }
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Union and intersection types</b>
+                    <pre class="language-typescript"><code>
+                        let unionVar: number | boolean;
+                        let intersectionVar: Type1 & Type2;
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Functions</b>
+                    <pre class="language-typescript"><code>
+                        (arg1: Type): ReturnType => { ...; return value; }      // Arrow function
+                        (arg: Type, argN: Type) => Type;                        // Function type
+                        (arg: Type, optional?: Type) => ReturnType              // Function type with optional param 
+                        (arg: Type, ...options: Type[]) => ReturnType           // Function type with rest param 
+                        function nameFn(arg = 'default'): ReturnType {}         // Default argument        
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Class</b>
+                    <pre class="language-typescript"><code>
+                        class HelloWorld {
+                            constructor() {}
+                            hello(arg: string) {
+                                console.log(arg);
+                            }
+                        }
+
+                        // Example
+                        const sayHello = new HelloWorld();
+                        sayHello("Hello World");     // Pints in the console "hello world"
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Access Modifires</b>
+                    <pre class="language-typescript"><code>
+                        class HelloWorld {
+                            property: Type;                                        // By default the property is public 
+                            public defaultProperty = 'default value';              // A property public means that it can be readed outside of the class
+                            private _privateProperty: Type;                        // A property that can only be readed in the class
+                            private readonly _privateReadonlyProperty: Type;       // A property that can only be readed in the class and immutable
+                            static staticProperty: Type;                           // A property that can be used without making a new instance of the class
+                            protected protectedProperty: Type                      // Members are only visible to subclasses of the class they're declared in
+                        }
+                    </code></pre>
+                </li>
+
+                <li>
+                    <b>Getters / Setters</b>
+                    <pre class="language-typescript"><code>
+                        class HelloWorld {
+                            private _length = 0;
+                            get length() {
+                              return this._length;    // Gets the value from _length
+                            }
+                            set length(value) {
+                              this._length = value;   // Sets the value from _length
+                            }
+                        }
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Class heritage with implements</b>
+                    <pre class="language-typescript"><code>
+                        interface Animal {
+                            makeNoise(): void;
+                          }
+                          // You can use an implements clause to check that a class satisfies a particular interface.
+                          class Dog implements Animal {
+                            makeNoise() {
+                              console.log("waf waf");
+                            }
+                          }
+                          // Classes may also implement multiple interfaces, e.g. class C implements A, B
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Class heritage with extends</b>
+                    <pre class="language-typescript"><code>
+                        class Animal {
+                            move() {
+                              console.log("Moving along!");
+                            }
+                          }
+                           
+                          class Dog extends Animal {
+                            makeNoise() {
+                                console.log("woof!");
+                            }
+                          }
+
+                          const myNewDog = new Dog();
+                          // Base class method
+                          myNewDog.move();
+                          // Derived class method
+                          myNewDog.makeNoise();
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Generic classes</b>
+                    <pre class="language-typescript"><code>
+                        class Box&lt;Type&gt;  {
+                            contents: Type;
+                            constructor(value: Type) {
+                              this.contents = value;
+                            }
+                          }
+                           
+                          const newBox = new Box("hello!");
+                          // newBox will be type Box&lt;string&gt; 
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Abstract classes</b>
+                    <pre class="language-typescript"><code>
+                      // Classes, methods, and fields in TypeScript may be abstract.
+                      // An abstract method or abstract field is one that hasn’t had an implementation provided.
+                      abstract class Base {
+                        abstract getName(): string;
+                       
+                        printName() {
+                          console.log("Hello, " + this.getName());
+                        }
+                      }
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Interface</b>
+                    <pre class="language-typescript"><code>
+                        interface Human {
+                            name: string;
+                            age: number;
+                            hobbies: string[];
+                        }
+                        // Example
+                        const myHuman: Human;
+                        myHuman = await fetch(myApiToGetAHuman);  // myHuman variable will have the name, age and hobbies properties. 
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Some Utility Types</b>
+                    <pre class="language-typescript"><code>
+                      // Partial
+                      Partial&lt;{ x: number;  }&gt;                                 // same as { x?: number; }
+                      
+                      // Readonly 
+                      Readonly&lt;{ x: number; }&gt;                                //  same as { readonly x: }
+  
+                      // Pick
+                      Pick&lt;{ x: number; y: number; z: number; }, 'x' | 'y'&gt;  // same as { x: number; y: number; }
+
+                      // Record 
+                      Record&lt;'x' | 'y' | 'z', number&gt;                        // same as { x: number; y: number; z: number; }
+  
+                    </code></pre>
+                </li>
+                <li>
+                    <b>Modules</b>
+                    <pre class="language-typescript"><code>
+                      // @filename: animal.ts
+                      export type Cat = { breed: string; yearOfBirth: number };
+                       
+                      export interface Dog {
+                        breeds: string[];
+                        yearOfBirth: number;
+                      }
+                       
+                      // @filename: app.ts
+                      import { Cat, Dog } from "./animal.js";
+                      type Animals = Cat | Dog;
+                    </code></pre>
+                </li>
+            </ol>
+        </div>
+      </body>
+</html>
