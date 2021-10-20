@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Pictures/Awesome Cheatsheets.png" type="image/x-icon">
+    <title>Nodejs Cheatsheet By Amogh</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            This Nodejs Cheatsheet is for you.!
+        </div>
+    </nav>
+    <div class="container">
+            <li><b>We can execute Node.js programs in the terminal by typing the node command
+                <pre class="language-js"><code>node filename(app.js) </code></pre>
+            </li> 
+            <li><b>Node.js comes with REPL, an abbreviation for read–eval–print loop. REPL contains three different states:
+<!-- <ul> -->
+    <li>
+        *a read state where it reads the input from a user, *the eval state where it evaluates the user’s input *the print state where it prints out the evaluation to the console.</li>
+        <li>                After these states are finished REPL loops through these states repeatedly. REPL is useful as it gives back immediate feedback which can be used to perform calculations and develop code.
+        </li>
+<!-- </ul> -->
+                
+                <pre class="language-js"><code>node app.js
+>console.log("HI")
+>HI                </code></pre>
+            </li> 
+            <li>A process is the instance of a computer program that is being executed. Node has a global process object with useful properties. One of these properties is NODE_ENV which can be used in an if/else statement to perform different tasks depending on if the application is in the production or development phase.
+                <pre class="language-js"><code>
+if(process.env.NODE_ENV==='development'){
+    console.log("Development environment")
+}
+                </code></pre>
+            </li> 
+            <li>process.argv is a property that holds an array of command-line values provided when the current process was initiated.
+                <pre class="language-js"><code>console.log(process.argv[2])</code></pre>
+            </li> 
+            <li>We can also import some modules/files in different files
+                <pre class="language-js"><code>const func1=require('./func');</code></pre>
+            </li> 
+            <li>Nodejs has also some built-in/Core modules
+                   <ol>
+                       <li>Path</li>
+                    <li>Operating system</li>
+                    <li>File system</li>
+                    <li>Http etc.</li>
+                </ol>
+                
+                    <pre class="language-js"><code>const path=require('path')</code></pre>
+            </li>         </ol>
+    </div>
+</body>
+
+</html>
