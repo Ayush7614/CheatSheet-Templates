@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="prism.js"></script>
+    <title>Angular Cheatsheet</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            Angular Framwork Cheatsheet
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li><b>What is Angular</b> <br><br>
+                Angular is a development platform, built on TypeScript. As a platform, Angular includes: <br>
+                A component-based framework for building scalable web applications <br>
+                A collection of well-integrated libraries that cover a wide variety of features, including routing,
+                forms management, client-server communication, and more <br>
+                A suite of developer tools to help you develop, build, test, and update your code
+            </li> <br>
+            <hr> <br> <br>
+
+            <li><b>Angular concepts:</b> <br><br>
+                Components define views, which are sets of screen elements that Angular can choose among and modify
+                according to your program logic and data. <br> <br>
+
+                Components use services, which provide specific functionality not directly related to views. Service
+                providers can be injected into components as dependencies, making your code modular, reusable, and
+                efficient. <br>
+            </li> <br>
+            <hr> <br> <br>
+
+            <li><b>Modules: </b> <br><br>
+                Angular NgModules differ from and complement JavaScript (ES2015) modules. An NgModule declares a
+                compilation context for a set of components that is dedicated to an application domain, a workflow, or a
+                closely related set of capabilities. An NgModule can associate its components with related code, such as
+                services, to form functional units. <br><br>
+
+                Every Angular application has a root module, conventionally named AppModule, which provides the
+                bootstrap mechanism that launches the application. An application typically contains many functional
+                modules. <br>
+            </li> <br>
+            <hr> <br> <br>
+
+            <li><b>Components:
+                </b> <br><br>
+                Every Angular application has at least one component, the root component that connects a component
+                hierarchy with the page document object model (DOM). Each component defines a class that contains
+                application data and logic, and is associated with an HTML template that defines a view to be displayed
+                in a target environment. <br><br>
+
+                The @Component() decorator identifies the class immediately below it as a component, and provides the
+                template and related component-specific metadata. <br>
+            </li> <br>
+            <hr> <br> <br>
+
+            <li><b>Templates, directives, and data binding:</b> <br><br>
+                A template combines HTML with Angular markup that can modify HTML elements before they are displayed.
+                Template directives provide program logic, and binding markup connects your application data and the
+                DOM. There are two types of data binding: <br><br>
+
+                Event binding lets your application respond to user input in the target environment by updating your
+                application data. <br>
+                Property binding lets you interpolate values that are computed from your application data into the
+                HTML.<br>
+            </li> <br>
+            <hr> <br> <br>
+
+            <li><b>Services and dependency injection
+                </b> <br><br>
+                For data or logic that isn't associated with a specific view, and that you want to share across
+                components, you create a service class. A service class definition is immediately preceded by the
+                @Injectable() decorator. The decorator provides the metadata that allows other providers to be injected
+                as dependencies into your class. <br><br>
+
+                Dependency injection (DI) lets you keep your component classes lean and efficient. They don't fetch data
+                from the server, validate user input, or log directly to the console; they delegate such tasks to
+                services. <br>
+            </li> <br>
+            <hr> <br> <br>
+
+            <li><b>Routing:
+                </b> <br><br>
+                The Angular Router NgModule provides a service that lets you define a navigation path among the
+                different application states and view hierarchies in your application. It is modeled on the familiar
+                browser navigation conventions: <br><br>
+
+                Enter a URL in the address bar and the browser navigates to a corresponding page. <br>
+
+                Click links on the page and the browser navigates to a new page.<br>
+
+                Click the browser's back and forward buttons and the browser navigates backward and forward through the
+                history of pages you've seen.<br>
+            </li> <br>
+            <hr> <br> <br>
+
+            <li><b>Angular CLI:</b> <br><br>
+                <ul>
+                    <li>
+                        This command will install the Angular CLI into our local machine using npm. <br>
+                        <pre class="language-js"><code>npm install -g @angular/cli </code></pre>
+                    </li>
+                    <li>
+                        This will set up a new Angular application using the ng new command. <br>
+                        <pre class="language-js"><code> ng new < application name > </code></pre>
+                    </li>
+
+                    <li>
+                        This creates a new project and set the projects prefix to new. <br>
+                        <pre class="language-js"><code> ng new < application name >  --prefix best </code></pre>
+                    </li>
+                    <li>
+                        This returns all available Angular command list. <br>
+                        <pre class="language-js"><code> ng new --help </code></pre>
+                    </li>
+                    <li>
+                        This command checks our entire application for any linting warnings. <br>
+                        <pre class="language-js"><code> ng lint my-app </code></pre>
+                    </li>
+                    <li>
+                        If there are any form of linting errors, this command will fix it. <br>
+                        <pre class="language-js"><code> ng lint my-app --fix </code></pre>
+                    </li>
+                    <li>
+                        This formats our entire codebase. <br>
+                        <pre class="language-js"><code> ng lint my-app --format stylish</code></pre>
+                    </li>
+                    <li>
+                        This command returns all the available linting command list. <br>
+                        <pre class="language-js"><code>ng lint my-app --help </code></pre>
+                    </li>
+                    <li>
+                        This command will use your package manager to download new dependencies and update the project
+                        with configuration changes. <br>
+                        <pre class="language-js"><code> ng add < package name > </code></pre>
+                    </li>
+                    <li>
+                        This will create a new component of our application. We can also use the ng g c < name>
+                            shorthand to do this. <br>
+                            <pre class="language-js"><code> ng generate component < name> </code></pre>
+                    </li>
+                    <li>
+                        This command angular directive. <br>
+                        <pre class="language-js"><code>ng g d < directive name> </code></pre>
+                    </li>
+                    <li>
+                        Creates a new Javascript class-based service. <br>
+                        <pre class="language-js"><code>ng g s < service name> </code></pre>
+                    </li>
+                    <li>
+                        Generates a new pipe <br>
+                        <pre class="language-js"><code> ng g p < pipe name> </code></pre>
+                    </li>
+                    <li>
+                        This will create a new class in the specified directory. <br>
+                        <pre class="language-js"><code> ng g cl < destination> </code></pre>
+                    </li>
+                    <li>
+                        Builds the application for production and stores it in the dist directory. <br>
+                        <pre class="language-js"><code> ng build </code></pre>
+                    </li>
+                    <li>
+                        Serves the application by opening up the application in a browser using any port 4200 or any
+                        available port. <br>
+                        <pre class="language-js"><code> ng serve -o </code></pre>
+                    </li>
+                    <li>
+                        serves the application using ssl <br>
+                        <pre class="language-js"><code>ng serve -ssl </code></pre>
+                    </li>
+                    <li>
+                        This returns all available Angular command list. <br>
+                        <pre class="language-js"><code> ng new --help </code></pre>
+                    </li>
+                </ul>
+            </li> <br>
+            <hr> <br> <br>
+
+            <li><b>Components:</b> <br> <br>
+                Components are the basic building blocks of an Angular Application. <br>
+                This is an example of a component:
+                <pre class="language-js"><code>
+            import { Component} from '@angular/core';
+
+            @Component({
+                selector: 'app-navbar',
+                template: '<header>Navbar</header>',
+                styleUrls: ['./navbar.component.css']
+            })
+            export class NavbarComponent {
+                    
+            title: string = "Angular Cheat Sheet";
+            constructor() { }
+                    
+            } </code></pre>
+                We can invoke this compoent using the selector as follows: <br>
+                <pre class="language-js"> < code>< app-navbar>< /app-navbar> </code></pre>
+            </li> <br>
+            <hr><br> <br>
+
+            <li><b>Angular Lifecycle hooks:</b> <br><br>
+                A component instance has a lifecycle that starts when Angular instantiates the
+                component class and renders the component view along with its child views.
+                The lifecycle continues with change detection, as Angular checks to see when
+                data-bound properties change, and updates both the view and the component instance as needed. <br>
+                The lifecycle ends when Angular destroys the component instance and removes its rendered
+                template from the DOM. <br><br>
+                Your application can use lifecycle hook methods to tap into key events in the lifecycle
+                of a component or directive to initialize new instances, initiate change detection when needed,
+                respond to updates during change detection, and clean up before deletion of instances. <br> <br>
+
+                <ul>
+                    <li>
+                        When an input/output binding value changes. <br>
+                        <pre class="language-js"><code>ngOnChanges </code></pre>
+                    </li>
+                    <li>
+                        After the first ngOnChanges. <br>
+                        <pre class="language-js"><code> ngOnInit </code></pre>
+                    </li>
+                    <li>
+                        Developer's custom change detection. <br>
+                        <pre class="language-js"><code>ngDoCheck </code></pre>
+                    </li>
+                    <li>
+                        After component content initialized. <br>
+                        <pre class="language-js"><code>ngAfterContentInit</code></pre>
+                    </li>
+                    <li>
+                        After every check of component content.
+                        <pre class="language-js"><code>ngAfterContentChecked </code></pre>
+                    </li>
+                    <li>
+                        After a component's views are initialized.
+                        <pre class="language-js"><code>ngAfterViewInit </code></pre>
+                    </li>
+                    <li>
+                        After every check of a component's views.
+                        <pre class="language-js"><code>ngAfterViewChecked</code></pre>
+                    </li>
+                    <li>
+                        Just before the directive is destroyed.
+                        <pre class="language-js"><code>ngOnDestroy</code></pre>
+                    </li>
+
+                </ul>
+            </li> <br>
+            <hr><br> <br>
+
+            <li><b>Services:</b> <br><br> Services are objects designed for encapsulating business logic and data that
+                can be shared by many components. They are used to increase the reusability and modularity of apps. <br>
+                This is an example of service:
+                <pre class="language-js"><code>
+                import { Injectable } from '@angular/core';
+
+                    @Injectable({
+                      providedIn: 'root'
+                    })
+                    
+                    export class DataService {
+                    
+                      constructor() { }
+                      getData(){
+                        return [1,2,3,5];
+                      }
+                    } </code></pre> <br>
+                To tell Angular that a component needs a service's instance, we simply add the service to the
+                constructor of the component as follows:
+                <pre class="language-js"><code>
+                import { Component} from '@angular/core';
+
+                    @Component({
+                      selector: 'app-navbar',
+                      template: '<header>Navbar</header>',
+                      styleUrls: ['./navbar.component.css']
+                    })
+                    export class NavbarComponent {
+                    
+                      constructor(private dataService: DataService) { }
+                    }</code></pre>
+            </li> <br>
+            <hr><br> <br>
+
+            <li><b>Template syntax:</b> <br> <br>
+                <ul>
+                    <li>
+                        using {{data to be displayed}} will display dynamic content from the ts file.
+                        <pre class="language-js"><code>Interpolation</code></pre>
+                    </li>
+                    <li>
+                        Adding Click events to buttons to call a method defined in the ts file
+                        <pre class="language-js"><code>< button (click)="callMethod()" ... /></code></pre>
+                    </li>
+                    <li>
+                        Adding Conditionals to elements. Conditionals have to listen to truthy or falsy value.
+                        <pre class="language-js">< code>< button *ngIf="loading" ... /></code></pre>
+                    </li>
+                    <li>
+                        terate through a defined list of items. Picture this as a for a loop.
+                        <pre class="language-js"><code>*ngFor="let item of items"</code></pre>
+                    </li>
+                    <li>
+                        Adding dynamic classes based on conditionals.
+                        <pre
+                            class="language-js"><code>< div [ngClass]="{green: isTrue(), bold: itTrue()}"/></code></pre>
+                    </li>
+                    <li>
+                        Adding dynamic styles to template based on conditions
+                        <pre
+                            class="language-js"><code>< div [ngStyle]="{'color': isTrue() ? '#bbb' : '#ccc'}"/></code></pre>
+                    </li>
+                </ul>
+            </li> <br>
+            <hr><br> <br>
+
+            <li><b>Component Communication:</b> <br>
+                You can pass data from child to parent, parent to parent, and between two unrelated components: <br>
+                <ul>
+                    <li> input(): This method helps To pass a value into the child components. </li>
+                </ul>
+                <pre class="language-js"><code>
+                export class SampleComponent {
+                @Input() value: 'Some Data should go in here';
+                } </code></pre>
+                Child components are registered in parents component like this: <br>
+                <pre class="language-js"><code>< child-component [value]="data">< /child-component> </code></pre>
+                output(): This method Emits an event to the parent component. A bunch of data can be passed into the
+                emitted event which makes it a medium of passing data from child to parent: <br><br>
+
+                To Emit the event from the child component:
+                <pre class="language-js"><code>
+                @Output() myEvent: EventEmitter < MyModel > = new EventEmitter();
+                calledEvt(item: MyModel) {
+                    this.myEvent.emit(item);
+                }</code></pre>
+                And then the parent component listens to that event:
+                <pre class="language-js"><code>
+                < parent-component 
+                (myEvent)="callMethod()">< /parent-component> </code></pre>
+
+            </li><br>
+            <hr><br> <br>
+
+            <li><b>Angular Services:</b>
+                <pre class="language-js"><code>
+                    @Injectable()
+                    export class MyService {
+                        public users: Users[];
+                        constructor() { }
+                        getAllUsers() {
+                            // some implementation
+                        }
+                    } </code></pre>
+                To use this service in your component, import it using the import statement and then register it in the
+                constructor <br>
+                <pre class="language-js"><code>
+                import MyService from '< path>'
+                constructor(private UserService: MyService)  </code></pre>
+                To generate service in Angular
+                <pre class="language-js"><code>ng g s <service name></code></pre>
+            </li><br>
+            <hr><br> <br>
+
+            <li><b>Pipes:</b> <br><br>
+                Pipes in Angular gives us the ability to transform data into any specific format. For example, you can
+                write a simple pipe that will format an integer to a currency format or format dates to any form.
+                <br><br>
+
+                Angular comes with some built-in pipes like the date and currency pipe. <br>
+                We can define our own custom pipes too by doing this:
+                <pre class="language-js"><code>
+            import { Pipe, PipeTransform } from '@angular/core';
+
+            @Pipe({ name: 'exponentialStrength' })
+            export class ExponentialStrengthPipe implements PipeTransform {
+                transform(value: number, exponent?: number): number {
+                    return Math.pow(value, isNaN(exponent) ? 1 : exponent);
+                }
+            } </code></pre>
+                To use a pipe in our component we can do this:
+                <pre class="language-js"><code>{{power | exponentialStrength: factor}} <service name></code></pre>
+            </li><br>
+            <hr><br> <br>
+
+
+            <li><b></b> <br>
+                Bootstrapping &nbsp;:- <br>
+                <pre
+                    class="language-js"><code>import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; <service name></code></pre>
+                <br><br><br>
+
+                Bootstraps the application, using the root component from the specified NgModule.&nbsp; &nbsp; :-<br>
+                <pre
+                    class="language-js"><code>platformBrowserDynamic().bootstrapModule(AppModule); <service name></code></pre>
+
+            </li><br>
+            <hr><br> <br>
+
+            <li><b></b> <br>
+                <ul>
+                    <li> NgModules &nbsp; :- <br> <br>
+                        import { NgModule } from '@angular/core'; </li><br><br> <br> <br>
+
+                    <li>@NgModule({
+                        declarations: ..., imports: ..., exports: ...,
+                        providers: ..., bootstrap: ...
+                        }) &nbsp; &nbsp; :- <br> <br>
+                        class MyModule {}
+                        Defines a module that contains components, directives, pipes, and providers. </li> <br><br><br>
+
+                    <li>declarations: [MyRedComponent, MyBlueComponent, MyDatePipe] &nbsp;&nbsp; :- <br><br>
+                        List of components, directives, and pipes that belong to this module.</li> <br><br><br> <br>
+
+                    <li>imports: [BrowserModule, SomeOtherModule] &nbsp;&nbsp; :- <br><br>
+                        List of modules to import into this module. Everything from the imported modules is available to
+                        declarations of this module.</li> <br><br><br> <br>
+
+                    <li>exports: [MyRedComponent, MyDatePipe] &nbsp;&nbsp; :- <br><br>
+                        List of components, directives, and pipes visible to modules that import this module.</li>
+                    <br><br><br> <br>
+
+                    <li>providers: [MyService, { provide: ... }] &nbsp;&nbsp; :- <br><br>
+                        List of dependency injection providers visible both to the contents of this module and to
+                        importers of
+                        this module.</li> <br><br><br> <br>
+
+                    <li>entryComponents: [SomeComponent, OtherComponent] &nbsp;&nbsp; :- <br><br>
+                        List of components not referenced in any reachable template, for example dynamically created
+                        from
+                        code.</li> <br><br><br> <br>
+
+                    <li>bootstrap: [MyAppComponent] &nbsp;&nbsp; :- <br><br>
+                        List of components to bootstrap when this module is bootstrapped.</li> <br><br><br> <br>
+
+                </ul>
+            </li><br>
+            <hr><br> <br>
+
+            <li><b></b> <br>
+                <ul>
+
+                    <li>Built-in directives &nbsp;&nbsp; :- <br><br>
+                        import { CommonModule } from '@angular/common';</li> <br><br><br> <br>
+
+                    < section *ngIf="showSection"> &nbsp;&nbsp; :- <br><br>
+                        Removes or recreates a portion of the DOM tree based on the showSection expression.
+            </li> <br><br><br> <br>
+
+            <li>
+                < li *ngFor="let item of list"> &nbsp;&nbsp; :- <br><br>
+                    Turns the li element and its contents into a template, and uses that to instantiate a view for each
+                    item
+                    in list.
+            </li> <br><br><br> <br>
+
+            <li>
+                < div [ngSwitch]="conditionExpression"> <br>
+                    < ng-template [ngSwitchCase]="case1Exp">...< /ng-template> <br>
+                            < ng-template ngSwitchCase="case2LiteralString">...< /ng-template> <br>
+                                    < ng-template ngSwitchDefault>...< /ng-template> <br>
+                                            < /div> &nbsp;&nbsp; :- <br><br>
+                                                Conditionally swaps the contents of the div by selecting one of the
+                                                embedded templates based on the
+                                                current value of conditionExpression.
+            </li> <br><br><br> <br>
+
+            <li>
+                < div [ngClass]="{'active': isActive, 'disabled': isDisabled}"> &nbsp;&nbsp; :- <br><br>
+                    Binds the presence of CSS classes on the element to the truthiness of the associated map values. The
+                    right-hand expression should return {class-name: true/false} map.
+            </li> <br><br><br> <br>
+
+            <li>
+                < div [ngStyle]="{'property': 'value'}"> <br>
+                    < div [ngStyle]="dynamicStyles()"> &nbsp;&nbsp; :- <br><br>
+                        Allows you to assign styles to an HTML element using CSS. You can use CSS directly, as in
+                        the first example, or you can call a method from the component.
+            </li> <br><br><br> <br>
+            </ul>
+            </li><br>
+            <hr><br> <br>
+
+
+
+            <li><b>References:</b> <br><br><br>
+                To make this CheetSheet more accurate_<br> <br>
+                <ul>
+                    <li> Official Website of Angular Framework </li>
+                </ul>
+            </li><br>
+            <hr><br> <br><br>
+
+
+        </ol>
+    </div>
+</body>
+
+</html>
