@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Pictures/Awesome Cheatsheets.png" type="image/x-icon">
+    <title>Pandas Cheatsheet</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            A Beginners Cheatsheet to get you started with Python Pandas
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li>
+                <strong>Create DataFrame</strong>
+               
+                <pre class="language-js">
+                    <code>
+                    pandas.DataFrame(data, columns=["name1","name2","name3"])  
+                </pre>
+            </li>
+            <li>
+                <strong>Importing Data</strong>
+               
+                <pre class="language-js">
+                    <code>
+                    // From a CSV file
+                    pd.read_csv(filename)
+                    
+                    // From a delimited text file (like TSV)
+                    pd.read_table(filename)
+
+                    // From an Excel file
+                    pd.read_excel(filename)
+
+                    // Read from a SQL table/database
+                    pd.read_sql(query, connection_object)
+
+                    // Read from a JSON formatted string, URL or file
+                    pd.read_json(json_string)
+
+                    // Parses an html URL, string or file and extracts tables to a list of dataframes
+                    pd.read_html(url)
+
+                    // Takes the contents of your clipboard and passes it to read_table()
+                    pd.read_clipboard()
+
+                    // From a dict, keys for columns names, values for data as lists
+                    pd.DataFrame(dict) 
+                </pre>
+            </li>
+            <li>
+                <strong>Exporting Data</strong>
+               
+                <pre class="language-js">
+                    <code>
+                    // Write to a CSV file
+                    df.to_csv(filename)
+
+                    // Write to an Excel file
+                    df.to_excel(filename)
+
+                    // Write to a SQL table
+                    df.to_sql(table_name, connection_object)
+
+                    // Write to a file in JSON format
+                    df.to_json(filename)  
+                </pre>
+            </li>
+            <li>
+                <strong>Viewing/Inspecting Data</strong>
+               
+                <pre class="language-js">
+                    <code>
+                    // First n rows of the DataFrame
+                    df.head(n)
+
+                    // Last n rows of the DataFrame
+                    df.tail(n)
+
+                    // Number of rows and columns
+                    df.shape
+
+                    // Index, Datatype and Memory information
+                    df.info()
+
+                    // Summary statistics for numerical columns
+                    df.describe()
+
+                    // View unique values and counts
+                    s.value_counts(dropna=False)
+
+                    // Unique values and counts for all columns
+                    df.apply(pd.Series.value_counts) 
+                </pre>
+            </li>
+            <li>
+                <strong>Generate Date list</strong>
+               
+                <pre class="language-js">
+                <code>  
+                    pd.date_range(DATE_START, periods=DATE_DELTA.days, freq="D").tolist() 
+                </pre>
+            </li>
+            <li>
+                <strong>Data Cleaning</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // Rename columns
+                    df.columns = ['a','b','c']
+
+                    // Checks for null Values, Returns Boolean Arrray
+                    pd.isnull()
+
+                    // Opposite of pd.isnull()
+                    pd.notnull()
+
+                    // Drop all rows that contain null values
+                    df.dropna()
+
+                    // Drop all columns that contain null values
+                    df.dropna(axis=1)
+
+                    // Drop all rows have have less than n non null values
+                    df.dropna(axis=1,thresh=n)
+
+                    // Replace all null values with x
+                    df.fillna(x)
+
+                    // Replace all null values with the mean (mean can be replaced with almost any function from the statistics module)
+                    s.fillna(s.mean())
+
+                    // Convert the datatype of the series to float
+                    s.astype(float)
+
+                    // Replace all values equal to 1 with 'one'
+                    s.replace(1,'one')
+
+                    // Replace all 1 with 'one' and 3 with 'three'
+                    s.replace([1,3],['one','three'])
+
+                    // Mass renaming of columns
+                    df.rename(columns=lambda x: x + 1)
+
+                    // Selective renaming
+                    df.rename(columns={'old_name': 'new_ name'})
+
+                    // Change the index
+                    df.set_index('column_one')
+
+                    // Mass renaming of index 
+                    df.rename(index=lambda x: x + 1)
+                </pre>
+            </li>
+            <li>
+                <strong>Configure Plotting</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // increase font size
+                    matplotlib.rcParams.update({'font.size': 22})
+                    // make bounding box tight
+                    plt.savefig('report.png', bbox_inches='tight')
+                    // rotate  axis
+                    df_m.plot(x='split', y=["total", "POSITIVE", "NEGATIVE"], figsize=(32, 18), grid=True, kind="bar", rot=0)
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>GroupBy</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // Within each team we are grouping based on "Position" 
+                    gkk = daf.groupby(['Team', 'Position']) 
+                      
+                    // Print the first value in each group 
+                    gkk.first()    
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Plot multiple series with ma</strong>
+               
+                <pre class="language-js">
+                <code>
+                    import matplotlib.pyplot as plt
+
+                    df = pd.read_csv(csv_filepath)
+                    
+                    df.plot(x='epoch', y=["series1", "series2"], figsize=(32, 18), grid=True, color=["red","green"])
+                    
+                    plt.savefig(os.path.join(self.ROOT, 'report.pdf'))
+                    plt.savefig(os.path.join(self.ROOT, 'report.png')) 
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Get columns in DataFrame</strong>
+               
+                <pre class="language-js">
+                <code>
+                    list = df.columns
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Iterate through DataFrame rows</strong>
+               
+                <pre class="language-js">
+                <code>
+                    for index, row in df.iterrows():
+                        print(index, row)
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Sorting the column</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // accending
+                    df.sort_values(by=['Brand'], inplace=True)
+                    // descending 
+                    df.sort_values(by=['Brand'], inplace=True, ascending=False)
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Adding column</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // with default value
+                    df["new_column"] = None
+                    // with data
+                    df['capital city'] = ['Rome','Madrid','Athens','Paris','Lisbon']
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Rename column</strong>
+               
+                <pre class="language-js">
+                <code>
+                    dfnew = df.rename(columns={'old_name': 'new_name'})
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Removing column</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // Delete using del 
+                    del df['column_to_remove']
+                    // Delete using drop() 
+                    df = df.drop(['column_to_remove'], axis=1)
+                      
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Updating row</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // Update column 'name' at index 0
+                    df.loc[0,'name'] = 123
+                      
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Querying DataFrame</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // get all where 'val' > 55.00
+                    df.loc[df['val'] > 55.00]
+
+                    // get nth where 'val' > 55.00 - returns row only not array of length=1
+                    df.loc[df['val'] > 55.00].iloc[0]
+                    
+                    // get top 1 row - returns array of rows of length=1
+                    df.loc[df['val'] > 55.00].head(1)
+
+                    // get top n rows - returns array of rows
+                    df.loc[df['val'] > 55.00].head(5)
+                    
+                    // comparison operators
+                    df.loc[df['val'] > 55.00].head(5)
+                    df.loc[df['val'] == 55.00].head(5)
+                    df.loc[df['val'] != 55.00].head(5)
+                    df.loc[df['val'].isin(['a','b','c'])]
+                    
+                    // check for None 
+                    df.loc[df['change2'].isnull()].head(1)
+
+                    // check for NOT None 
+                    df.loc[~df['change2'].isnull()].head(1)
+                    
+                    
+                    // logical - combine
+                    df.loc[(df['val'] >= 0) & (df['column_name'] <= 101)]
+                      
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Modify limit when printing series</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // set new limit
+                    pd.set_option('display.max_rows', 1_000_000)
+                    
+                    // reset limit
+                    pd.reset_option('display.max_rows')
+                        
+                </code>
+                </pre>
+            </li>
+            <li>
+                <strong>Statistics</strong>
+               
+                <pre class="language-js">
+                <code>
+                    // Summary statistics for numerical columns
+                    df.describe()
+
+                    // Returns the mean of all columns
+                    df.mean()
+
+                    // Returns the correlation between columns in a DataFrame
+                    df.corr()
+
+                    // Returns the number of non-null values in each DataFrame column
+                    df.count()
+
+                    // Returns the highest value in each column
+                    df.max()
+
+                    // Returns the lowest value in each column
+                    df.min()
+
+                    // Returns the median of each column
+                    df.median()
+
+                    // Returns the standard deviation of each column
+                    df.std()
+                </code>
+                </pre>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>
