@@ -4,7 +4,7 @@
 }
 
 nav{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@ nav{
 }
 
 .container{
-    width: 80vw;
+    width: 81vw;
     padding: 32px 0;
     margin: auto;
     font-family: calibri;
@@ -30,7 +30,7 @@ nav{
 }
 
 .logo img{
-    width: 64px;
+    width: 65px;
 }
 
 .toolbar-item button{
