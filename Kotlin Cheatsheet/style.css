@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -22,9 +24,10 @@ nav{
     width: 50vw;
     padding: 32px 0;
     margin: auto;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+    font-family: 'Balsamiq Sans', cursive;
 }
+
+
 
 .logo{
     padding: 0 13px;
