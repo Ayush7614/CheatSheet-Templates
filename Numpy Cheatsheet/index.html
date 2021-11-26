@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Pictures/Awesome Cheatsheets.png" type="image/x-icon">
+    <title>Numpy Cheatsheet By Anshul</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="copy.png" alt=""></span>
+        <div class="content center">
+            A Beginners Cheatsheet to get you started with NumPy Python
+        </div>
+    </nav>
+    <div class="container">
+
+
+        <h2 style="color: red;">Basics</h2>
+        <br>
+            <li><b>Importing Numpy</b> <code></code>
+                <pre class="language-js"><code>
+                    // Here we have assigned an alias name to numpy
+                    import numpy as np
+                </code>
+                </pre>
+            </li> 
+            <br>
+            <li><b>Creating array</b> <code></code>
+                <pre class="language-js"><code>
+                    // creating a 1D array
+                    a = np.array([1,2,3])
+                    
+                    // creating a 2D array
+                    b = np.array([(1,2,3,4),(7,8,9,10)],dtype=int)
+                } </code></pre>
+            </li>
+            <br>
+            <h2 style="color: red;">Properties</h2>
+            <br>
+            <li><b>Size</b> <code></code>
+                <pre class="language-js"><code>
+                    // Returns number of elements in array
+                    array.size
+                </code>
+                </pre>
+            </li> 
+            <br>
+            <li><b>Shape</b> <code></code>
+                <pre class="language-js"><code>
+                    // Returns dimensions of array(rows, columns)
+                    array.shape
+                } </code></pre>
+            </li>
+            <br>
+            <li><b>Return Type</b> <code></code>
+                <pre class="language-js"><code>
+                    // Returns type of elements in array
+                    array.dtype
+                } </code></pre>
+            </li>
+            <br>
+            <h2 style="color: red;">Array Operations</h2>
+            <br>
+            <li><b>Copying</b><code></code>
+                <pre class="language-js"><code>
+                    // Copies array to new memory array.
+                    np.copy(array)
+
+                    // Creates view of array elements with typedtype
+                    view(dtype)</code></pre>
+            </li>
+            <br>
+            <li><b>Sorting</b><code></code>
+                <pre class="language-js"><code>
+                    // Sorts Array
+                    array.sort()
+
+                    // Sorts specific axis of array
+                    array.sort(axis=0)
+
+                    // Reshapes array to 2 rows, 3 columns without changing data.
+                    array.reshape(2,3)
+                </code></pre>
+            </li>
+            <br>
+            <li><b>Adding</b><code></code>
+                <pre class="language-js"><code>
+                    // Appends values to end of array
+                    np.append(array,values)
+
+                    // Inserts values into array before index 4
+                    np.insert(array,4,values)
+            </code></pre>
+            </li>
+            <li><b>Removing</b><code></code>
+                <pre class="language-js"><code>
+                    // Deletes row on index 2 of array
+                    np.delete(array,2,axis=0)
+
+                    // Deletes column on index 3 of array
+                    np.delete(array,3,axis=1)
+            </code></pre>
+            </li>
+            <li><b>Combining</b><code></code>
+                <pre class="language-js"><code>
+                    // Adds array2 as rows to the end of array1
+                    np.concatenate((array1,array2),axis=0)
+
+                    // Adds array2 as columns to end of array1
+                    np.concatenate((array1,array2),axis=1)
+            </code></pre>
+            </li>
+            <li><b>Splitting</b><code></code>
+                <pre class="language-js"><code>
+                    // Splits array into 3sub-arrays
+                    np.split(array,3)
+            </code></pre>
+            </li>
+            <li><b>Indexing</b><code></code>
+                <pre class="language-js"><code>
+                    // Assigns array element on index 0 the value 5
+                    a[0]=5
+
+                    // Assigns array element on index [2][3] the value 1
+                    a[2,3]=1
+            </code></pre>
+            </li>
+            <li><b>Subsetting</b><code></code>
+                <pre class="language-js"><code>
+                    // Returns the element of index 2 in array a.
+                    a[2]
+
+                    // Returns the 2D array element on index [3][5]
+                    a[3,5]
+            </code></pre>
+            </li>
+            <li><b>Slicing</b><code></code>
+                <pre class="language-js"><code>
+                    // Returns the elements at indices 0,1,2,3
+                    a[0:4]
+
+                    // Returns the elements on rows 0,1,2,3 at column 3
+                    a[0:4,3]
+
+                    // Returns the elements at indices 0,1
+                    a[:2]
+
+                    // Returns the elements at index 1 on all rows
+                    a[:,1]
+            </code></pre>
+            </li>
+            <br><br>
+
+            <h2 style="color: red;">Numpy Functions:</h2>
+            <br>
+               <li><b>Array-wise Sum</b>
+                <pre class="language-js"><code>
+                    a.sum()</code></pre>
+            </li>
+            <li><b>Array-wise min value</b><code></code>
+                <pre class="language-js"><code>
+                    a.min()
+            </code></pre>
+            </li>
+            <li><b>Array row max value</b><code></code>
+                <pre class="language-js"><code>
+                    a.max(axis=0)
+            </code></pre>
+            </li>
+            <li><b>Mean</b><code></code>
+                <pre class="language-js"><code>
+                    a.mean()
+            </code></pre>
+            </li>
+            <li><b>Median</b><code></code>
+                <pre class="language-js"><code>
+                    a.median()
+            </code></pre>
+            </li>
+            <br>
+
+            <h2 style="color: red;">Array Mathematics</h2>
+            <br>
+            <h3 style="color:blue;">Arithmetic Operations</h2>
+            <br>
+               <li><b>Addition</b>
+                <pre class="language-js"><code>
+                    np.add(a,b)
+                </code></pre>
+            </li>
+            <li><b>Subtraction</b><code></code>
+                <pre class="language-js"><code>
+                    np.subtract(a,b)
+            </code></pre>
+            </li>
+            <li><b>Multiplication</b><code></code>
+                <pre class="language-js"><code>
+                    np.multiply(a,b)
+            </code></pre>
+            </li>
+            <li><b>Division</b><code></code>
+                <pre class="language-js"><code>
+                    np.divide(a,b)
+            </code></pre>
+            </li>
+            <li><b>Exponentiation</b><code></code>
+                <pre class="language-js"><code>
+                    np.exp(a)
+            </code></pre>
+            </li>
+            <li><b>Square Root</b><code></code>
+                <pre class="language-js"><code>
+                    np.sqrt(b)
+            </code></pre>
+            </li>
+            <br>
+            <h3 style="color:blue;">Comparison</h2>
+            <br>
+            <li><b>Element-wise</b><code></code>
+                <pre class="language-js"><code>
+                    a == b
+            </code></pre>
+            </li>
+            <li><b>Array-wise</b><code></code>
+                <pre class="language-js"><code>
+                    np.array_equal(a,b)
+            </code></pre>
+            </li>  
+            <br><br>
+
+            <h2 style="color: red;">Initial Placeholders</h2>
+            <br>
+               <li><b>You can create empty arrays in following ways</b>
+                <pre class="language-js"><code>
+                    // 1D array of length 3 all zeros
+                    np.zeros(3)
+
+                    >>> array([0., 0., 0.])
+
+                    // 2D array of all zeros
+                    np.zeros((2,3))
+
+                    >>> array([[0., 0., 0.],
+                    [0., 0., 0.]])
+
+                    // 3D array of all zeros
+                    np.zeros((3,2,4))
+                
+                    >>> array([[[0., 0., 0., 0.],
+                    [0., 0., 0., 0.]],[[0., 0., 0., 0.],
+                    [0., 0., 0., 0.]],[[0., 0., 0., 0.],
+                    [0., 0., 0., 0.]]])
+
+                    // 3×4 array with all values 2
+                    np.full((3,4),2)
+                    
+                    // 3×5 array of random floats between 0-1
+                    np.random.rand(3,5)
+
+                    // 3×4 array with all values 1
+                    np.ones((3,4))
+
+                    // 4×4 array of 0 with 1 on diagonal
+                    np.eye(4)
+                </code></pre>
+                
+            <h2 style="color: red;">Loading a Numpy Array</h2>
+            <br>
+               <li><b>On disk</b>
+                <pre class="language-js"><code>
+                    np.load("new_array.npy")
+                </code></pre>
+            </li>
+            <li><b>Text/CSV files</b><code></code>
+                <pre class="language-js"><code>
+                    // From a text file
+                    np.loadtxt('New_file.txt')
+
+                    // From a CSV file
+                    np.genfromtxt('New_file.csv',delimiter=',')
+            </code></pre>
+            <br>
+            <h2 style="color: red;">Saving a Numpy Array</h2>
+            <br>
+               <li><b>On disk</b>
+                <pre class="language-js"><code>
+                    np.save("new_array",x)
+                </code></pre>
+            </li>
+            <li><b>Text/CSV files</b><code></code>
+                <pre class="language-js"><code>
+                    // Writes to a text file
+                    np.savetxt('New_file.txt',arr,delimiter=' ')
+
+                    // Writes to a CSV file
+                    np.savetxt('New_file.csv',arr,delimiter=',')
+            </code></pre>
+            <br>
+            <br>
+        </ol>
+    </div>
+</body>
+
+</html>
